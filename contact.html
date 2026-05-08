@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Liên Hệ &amp; Đối Tác | BioSenses</title>
+  <meta name="description" content="Liên hệ BioSenses để trở thành đối tác triển khai giải pháp theo dõi sức khoẻ từ xa tại cơ sở y tế của bạn." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <style>
+    .contact-hero {
+      background: linear-gradient(135deg, #0B2545 0%, #0d3168 60%, #091e3a 100%);
+      padding-top: calc(var(--nav-height) + 80px);
+      padding-bottom: 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 80% at 50% 50%, rgba(20,184,212,.12) 0%, transparent 70%),
+        repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(255,255,255,.015) 40px, rgba(255,255,255,.015) 41px);
+    }
+    .contact-hero .container { position: relative; z-index: 1; }
+    .contact-hero h1 { color: #fff; margin-bottom: 16px; }
+    .contact-hero p { color: rgba(255,255,255,.72); max-width: 600px; margin-inline: auto; margin-bottom: 32px; font-size: 1.05rem; }
+    .contact-hero .hero-btns { justify-content: center; }
+
+    .solutions-overview {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+    .sol-mini-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 20px 16px;
+      text-align: center;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+    .sol-mini-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(20,184,212,.3);
+    }
+    .sol-mini-card .sol-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: var(--color-light-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+      color: var(--color-accent);
+    }
+    .sol-mini-card h4 { font-size: .82rem; font-weight: 700; margin-bottom: 6px; }
+    .sol-mini-card p { font-size: .75rem; }
+
+    @media (max-width: 1024px) { .solutions-overview { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 768px) { .solutions-overview { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .solutions-overview { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-wordmark">
+        <span class="nav-logo-name"><span class="bio">Bio</span><span class="senses">Senses</span></span>
+        <span class="nav-logo-tagline">Giải pháp giám sát sức khoẻ bệnh nhân từ xa</span>
+      </div>
+    </a>
+    <ul class="nav-menu" role="list">
+      <li class="nav-item has-dropdown">
+        <a href="index.html#solutions" class="nav-link" aria-haspopup="true" aria-expanded="false">
+          Giải pháp
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="nav-dropdown" role="menu">
+          <a href="bio-sleepcare.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dot"></span> BIO SLEEPCARE™</a>
+          <a href="bio-rhythm.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dot"></span> BIO RHYTHM™</a>
+          <a href="#" class="nav-dropdown-item" role="menuitem"><span class="nav-dot"></span> BIO CARDICARE™ <span class="badge-soon">Sắp ra mắt</span></a>
+          <a href="bio-telecare.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dot"></span> BIO TELECARE™</a>
+          <a href="#" class="nav-dropdown-item" role="menuitem"><span class="nav-dot"></span> BIO RESEARCH™ <span class="badge-soon">Sắp ra mắt</span></a>
+        </div>
+      </li>
+      <li class="nav-item has-dropdown">
+        <a href="about.html" class="nav-link" aria-haspopup="true" aria-expanded="false">
+          Về BioSenses
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="nav-dropdown" role="menu">
+          <a href="about.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dot"></span> Về BioSenses</a>
+          <a href="advisory.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dot"></span> Đội ngũ chuyên gia</a>
+        </div>
+      </li>
+      <li class="nav-item"><a href="news.html" class="nav-link">Tin tức &amp; Sự kiện</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Thư viện Y khoa</a></li>
+    </ul>
+    <div class="nav-cta"><a href="contact.html" class="btn btn-primary btn-sm">Kết nối cùng chúng tôi</a></div>
+    <button class="hamburger" aria-label="Mở menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="contact-hero" aria-label="Contact Hero">
+  <div class="container">
+    <div class="section-label" style="justify-content:center;margin-bottom:16px;">Đối tác triển khai</div>
+    <h1>Mở Rộng <span class="hl">Danh Mục Lâm Sàng</span>,<br>Nâng Tầm <span class="hl-muted">Chuẩn Mực</span> Chăm Sóc</h1>
+    <p>BioSenses đồng hành cùng các cơ sở y tế trong việc triển khai dịch vụ theo dõi sức khoẻ từ xa — từ thiết bị, phần mềm đến hỗ trợ chuyên môn — <strong style="color:rgba(255,255,255,.9)">không yêu cầu đầu tư ban đầu</strong>, triển khai nhanh trong vòng 48h.</p>
+    <div class="hero-btns">
+      <a href="#contact-form" class="btn btn-primary btn-lg">Đăng Ký Trở Thành Đối Tác</a>
+      <a href="index.html#solutions" class="btn btn-outline-white btn-lg">Khám Phá Giải Pháp</a>
+    </div>
+  </div>
+</section>
+
+<!-- 4 BENEFIT CARDS -->
+<section class="section bg-white section--sm">
+  <div class="container">
+    <div class="benefit-cards">
+      <div class="benefit-card fade-up">
+        <div class="benefit-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <h3>Không Phí Đầu Tư (Zero CapEx)</h3>
+        <p>Biosenses trang bị toàn bộ phần cứng, phần mềm và bảo trì. Triển khai dịch vụ mới không rủi ro tài chính.</p>
+      </div>
+      <div class="benefit-card fade-up">
+        <div class="benefit-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
+        </div>
+        <h3>Mở Rộng Danh Mục Tầm Soát</h3>
+        <p>Dễ dàng tích hợp các dịch vụ chuyên sâu (Holter tim mạch dài ngày, Tầm soát giấc ngủ) để gia tăng giá trị chăm sóc.</p>
+      </div>
+      <div class="benefit-card fade-up">
+        <div class="benefit-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <h3>Bảo Chứng Chuyên Môn</h3>
+        <p>Hệ thống AI tự động bóc tách dữ liệu, kết hợp đội ngũ Bác sĩ thẩm định chẩn đoán theo tiêu chuẩn quốc tế.</p>
+      </div>
+      <div class="benefit-card fade-up">
+        <div class="benefit-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3>Vận Hành Tinh Gọn</h3>
+        <p>Thao tác dán máy chỉ 1 phút. Khâu logistics và CSKH hỗ trợ bệnh nhân do Biosenses hoàn toàn đảm nhiệm.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTIONS ECOSYSTEM -->
+<section class="section bg-light">
+  <div class="container">
+    <div class="section-header centered">
+      <div class="section-label">Hệ sinh thái</div>
+      <h2>5 Giải pháp tầm soát &amp; theo dõi sức khoẻ toàn diện</h2>
+      <p>Mỗi giải pháp được thiết kế độc lập hoặc tích hợp đồng thời, phù hợp với đặc thù của từng cơ sở y tế</p>
+    </div>
+    <div class="solutions-overview">
+      <a href="bio-sleepcare.html" class="sol-mini-card" style="text-decoration:none;">
+        <div class="sol-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </div>
+        <h4>BIO SLEEPCARE™</h4>
+        <p>Tầm soát Ngưng thở khi ngủ OSA</p>
+      </a>
+      <a href="bio-rhythm.html" class="sol-mini-card" style="text-decoration:none;">
+        <div class="sol-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <h4>BIO RHYTHM™</h4>
+        <p>Giám sát liên tục &amp; Phân tầng nguy cơ tim mạch</p>
+      </a>
+      <div class="sol-mini-card" style="opacity:.7;">
+        <div class="sol-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h4>BIO CARDICARE™</h4>
+        <p>Tầm soát Tim mạch &amp; Vận động</p>
+      </div>
+      <a href="bio-telecare.html" class="sol-mini-card" style="text-decoration:none;">
+        <div class="sol-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 6l10.5 6L22 6"/><path d="M1 6v12a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H3a2 2 0 0 0-2 2z"/></svg>
+        </div>
+        <h4>BIO TELECARE™</h4>
+        <p>Theo dõi sức khoẻ từ xa toàn diện</p>
+      </a>
+      <div class="sol-mini-card" style="opacity:.7;">
+        <div class="sol-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
+        </div>
+        <h4>BIO RESEARCH™</h4>
+        <p>Nghiên cứu và thực chứng lâm sàng</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM with TABS -->
+<section class="section bg-white" id="contact-form">
+  <div class="container" style="max-width:800px;">
+    <div class="section-header centered">
+      <div class="section-label">Liên hệ</div>
+      <h2>Đăng ký tư vấn &amp; hợp tác</h2>
+      <p>Điền thông tin bên dưới — chúng tôi sẽ liên hệ trong vòng 24h làm việc</p>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Loại liên hệ">
+      <button class="tab-btn active" role="tab" data-tab="tab-patient" aria-selected="true" aria-controls="tab-patient">Bệnh nhân</button>
+      <button class="tab-btn" role="tab" data-tab="tab-clinic" aria-selected="false" aria-controls="tab-clinic">Phòng khám / Bệnh viện</button>
+    </div>
+
+    <!-- TAB 1: Bệnh nhân -->
+    <div class="tab-panel active" id="tab-patient" role="tabpanel">
+      <div class="form-box">
+        <form class="form-light" novalidate>
+          <div class="form-group">
+            <label>Họ tên <span style="color:var(--color-accent)">*</span></label>
+            <input type="text" placeholder="Nguyễn Văn A" required />
+          </div>
+          <div class="form-group">
+            <label>Số điện thoại <span style="color:var(--color-accent)">*</span></label>
+            <input type="tel" placeholder="0901 234 567" required />
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="email@example.com" />
+          </div>
+          <div class="form-group">
+            <label>Giải pháp quan tâm <span style="color:var(--color-accent)">*</span></label>
+            <select required>
+              <option value="">-- Chọn giải pháp --</option>
+              <option value="sleepcare">BIO SLEEPCARE™ — Tầm soát Ngưng thở khi ngủ</option>
+              <option value="rhythm">BIO RHYTHM™ — Giám sát ECG Tim mạch</option>
+              <option value="cardicare">BIO CARDICARE™ — Tầm soát Tim mạch &amp; Vận động</option>
+              <option value="telecare">BIO TELECARE™ — Theo dõi sức khoẻ từ xa</option>
+              <option value="research">BIO RESEARCH™ — Nghiên cứu lâm sàng</option>
+            </select>
+          </div>
+          <div class="form-group" style="margin-bottom:0;">
+            <label>Mô tả nhu cầu / Câu hỏi</label>
+            <textarea rows="4" placeholder="Bạn muốn biết thêm về giải pháp nào? Có triệu chứng hay mối quan tâm cụ thể nào không?"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;margin-top:20px;justify-content:center;padding:14px;">GỬI YÊU CẦU TƯ VẤN</button>
+          <p class="form-note" style="color:var(--color-text-muted);margin-top:10px;text-align:center;">Cam kết bảo mật thông tin. Biosenses sẽ liên hệ trong 24h làm việc.</p>
+        </form>
+      </div>
+    </div>
+
+    <!-- TAB 2: Phòng khám / Bệnh viện -->
+    <div class="tab-panel" id="tab-clinic" role="tabpanel">
+      <div class="form-box">
+        <form class="form-light" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Họ tên <span style="color:var(--color-accent)">*</span></label>
+              <input type="text" placeholder="Nguyễn Văn A" required />
+            </div>
+            <div class="form-group">
+              <label>Tên Phòng khám / Bệnh viện <span style="color:var(--color-accent)">*</span></label>
+              <input type="text" placeholder="Phòng khám Đa khoa ABC" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Chức vụ <span style="color:var(--color-accent)">*</span></label>
+              <input type="text" placeholder="Giám đốc Y khoa / Bác sĩ trưởng" required />
+            </div>
+            <div class="form-group">
+              <label>Số điện thoại liên hệ <span style="color:var(--color-accent)">*</span></label>
+              <input type="tel" placeholder="0901 234 567" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="lienhe@benhvien.vn" />
+          </div>
+          <div class="form-group">
+            <label>Giải pháp quan tâm <span style="color:var(--color-accent)">*</span></label>
+            <select required>
+              <option value="">-- Chọn giải pháp --</option>
+              <option value="sleepcare">BIO SLEEPCARE™ — Tầm soát Ngưng thở khi ngủ</option>
+              <option value="rhythm">BIO RHYTHM™ — Giám sát ECG Tim mạch</option>
+              <option value="cardicare">BIO CARDICARE™ — Tầm soát Tim mạch &amp; Vận động</option>
+              <option value="telecare">BIO TELECARE™ — Theo dõi sức khoẻ từ xa</option>
+              <option value="research">BIO RESEARCH™ — Nghiên cứu lâm sàng</option>
+              <option value="multiple">Nhiều giải pháp</option>
+            </select>
+          </div>
+          <div class="form-group" style="margin-bottom:0;">
+            <label>Quy mô &amp; nhu cầu triển khai</label>
+            <textarea rows="4" placeholder="Số giường bệnh, quy mô phòng khám, nhu cầu số lượng thiết bị, thời gian dự kiến triển khai..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;margin-top:20px;justify-content:center;padding:14px;">GỬI YÊU CẦU TƯ VẤN</button>
+          <p class="form-note" style="color:var(--color-text-muted);margin-top:10px;text-align:center;">Cam kết bảo mật thông tin. Biosenses sẽ liên hệ trong 24h làm việc.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="margin-bottom:0;">
+          <div class="nav-logo-wordmark">
+            <span class="nav-logo-name"><span class="bio">Bio</span><span class="senses">Senses</span></span>
+            <span class="nav-logo-tagline">Giải pháp giám sát sức khoẻ bệnh nhân từ xa</span>
+          </div>
+        </a>
+        <p>Công ty TNHH BioSenses<br/>GPĐKKD: Số 03161627690 Sở KHĐT TPHCM<br/>Cấp ngày: 02/04/2026</p>
+        <div class="footer-addresses">
+          <div class="footer-address-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div><strong>Trụ sở chính</strong>28-30 Trần Đình Xu, P. Cầu Ông Lãnh, Tp. Hồ Chí Minh</div>
+          </div>
+          <div class="footer-address-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div><strong>Văn phòng Đại diện Việt Nam</strong>Số 6 Nguyễn Siêu, P. Bến Nghé, Tp. Hồ Chí Minh</div>
+          </div>
+          <div class="footer-address-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div><strong>Văn phòng Đại diện Singapore</strong>No 36 Robinson Road, #02-111, City House, Singapore (068877)</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Giải pháp</h4>
+        <nav class="footer-links">
+          <a href="bio-sleepcare.html">BIO SLEEPCARE™</a>
+          <a href="bio-rhythm.html">BIO RHYTHM™</a>
+          <a href="#">BIO CARDICARE™</a>
+          <a href="bio-telecare.html">BIO TELECARE™</a>
+          <a href="#">BIO RESEARCH™</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h4>Công ty</h4>
+        <nav class="footer-links">
+          <a href="about.html">Về chúng tôi</a>
+          <a href="news.html">Tin tức &amp; Sự kiện</a>
+          <a href="advisory.html">Đội ngũ chuyên gia</a>
+          <a href="contact.html">Liên hệ</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h4>Pháp lý</h4>
+        <nav class="footer-links">
+          <a href="policy.html#policy-privacy">Chính sách bảo mật</a>
+          <a href="policy.html#policy-return">Chính sách cung cấp, đổi huỷ &amp; hoàn phí</a>
+          <a href="policy.html#policy-payment">Chính sách thanh toán &amp; Điều kiện giao dịch</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 BioSenses. All rights reserved.</span>
+      <span>Thiết kế bởi BioSenses Technology</span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

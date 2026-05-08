@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tin tức &amp; Sự kiện | BioSenses</title>
+  <meta name="description" content="Tin tức, sự kiện và các công trình nghiên cứu liên quan đến BioSenses và nền tảng iParamed." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <style>
+    /* News page specific styles */
+    .news-hero {
+      background: linear-gradient(135deg, var(--color-primary) 0%, #0d3168 100%);
+      padding-top: calc(var(--nav-height) + 80px);
+      padding-bottom: 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .news-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(20,184,212,.12) 0%, transparent 70%);
+    }
+    .news-hero .container { position: relative; z-index: 1; }
+    .news-hero h1 { color: #fff; margin-bottom: 14px; }
+    .news-hero p { color: rgba(255,255,255,.7); max-width: 560px; margin-inline: auto; }
+
+    /* Filter tabs */
+    .news-filter {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      padding: 10px 26px;
+      font-size: .875rem;
+      font-weight: 600;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      transition: all var(--transition);
+      color: var(--color-text-muted);
+      background: var(--color-white);
+      letter-spacing: -0.01em;
+    }
+    .filter-btn:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+    }
+    .filter-btn.active {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+      color: #fff;
+    }
+
+    /* News full grid */
+    .news-full-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+    /* News card for full page — bigger image */
+    .news-card-full {
+      background: var(--color-white);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(0,0,0,0.04);
+      transition: transform var(--transition), box-shadow var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .news-card-full:hover { transform: translateY(-6px); box-shadow: var(--shadow-xl); }
+
+    .news-card-full-image {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .news-card-full-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .news-card-full:hover .news-card-full-image img { transform: scale(1.04); }
+
+    .news-card-full-tag {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      display: inline-block;
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(8px);
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+    }
+
+    .news-card-full-body {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .news-card-full-body h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--color-primary);
+      line-height: 1.45;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .news-card-full-body p {
+      font-size: .875rem;
+      color: var(--color-text-muted);
+      line-height: 1.65;
+      flex: 1;
+      margin-bottom: 18px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .news-read-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--color-accent);
+      transition: gap var(--transition);
+      text-decoration: none;
+    }
+    .news-read-link:hover { gap: 10px; }
+
+    .news-card-full.hidden { display: none; }
+
+    @media (max-width: 768px) {
+      .news-full-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <a href="index.html" class="nav-logo" aria-label="BioSenses trang chủ">
+      <div class="nav-logo-wordmark">
+        <span class="nav-logo-name"><span class="bio">Bio</span><span class="senses">Senses</span></span>
+        <span class="nav-logo-tagline">Giải pháp giám sát sức khoẻ bệnh nhân từ xa</span>
+      </div>
+    </a>
+    <ul class="nav-menu" role="list">
+      <li class="nav-item has-dropdown">
+        <a href="index.html#solutions" class="nav-link" aria-haspopup="true" aria-expanded="false">
+          Giải pháp
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="nav-dropdown" role="menu">
+          <a href="bio-sleepcare.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dot"></span> BIO SLEEPCARE™</a>
+          <a href="bio-rhythm.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dot"></span> BIO RHYTHM™</a>
+          <a href="#" class="nav-dropdown-item" role="menuitem"><span class="nav-dot"></span> BIO CARDICARE™ <span class="badge-soon">Sắp ra mắt</span></a>
+          <a href="bio-telecare.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dot"></span> BIO TELECARE™</a>
+          <a href="#" class="nav-dropdown-item" role="menuitem"><span class="nav-dot"></span> BIO RESEARCH™ <span class="badge-soon">Sắp ra mắt</span></a>
+        </div>
+      </li>
+      <li class="nav-item has-dropdown">
+        <a href="about.html" class="nav-link" aria-haspopup="true" aria-expanded="false">
+          Về BioSenses
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="nav-dropdown" role="menu">
+          <a href="about.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dot"></span> Về BioSenses</a>
+          <a href="advisory.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dot"></span> Đội ngũ chuyên gia</a>
+        </div>
+      </li>
+      <li class="nav-item"><a href="news.html" class="nav-link active">Tin tức &amp; Sự kiện</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Thư viện Y khoa</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-primary btn-sm">Kết nối cùng chúng tôi</a>
+    </div>
+    <button class="hamburger" aria-label="Mở menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="news-hero" aria-label="News Hero">
+  <div class="container">
+    <div class="section-label" style="justify-content:center;margin-bottom:16px;">Truyền thông</div>
+    <h1>Tin tức &amp; <span class="hl">Sự kiện</span></h1>
+    <p>Các công trình nghiên cứu, bài viết truyền thông và sự kiện liên quan đến BioSenses và nền tảng iParamed</p>
+  </div>
+</section>
+
+<!-- NEWS CONTENT -->
+<section class="section bg-light">
+  <div class="container">
+
+    <!-- Filter tabs -->
+    <div class="news-filter" role="tablist" aria-label="Lọc tin tức">
+      <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">Tất cả</button>
+      <button class="filter-btn" data-filter="featured" role="tab" aria-selected="false">Tin nổi bật</button>
+      <button class="filter-btn" data-filter="announcement" role="tab" aria-selected="false">Thông báo</button>
+      <button class="filter-btn" data-filter="event" role="tab" aria-selected="false">Sự kiện</button>
+    </div>
+
+    <!-- News grid -->
+    <div class="news-full-grid" id="news-grid">
+
+      <!-- Article 1 -->
+      <article class="news-card-full fade-up" data-category="featured">
+        <div class="news-card-full-image">
+          <img src="assets/images/logo-oucru.jpg" alt="OUCRU – Oxford – iParamed Research">
+          <span class="news-card-full-tag">Tin nổi bật</span>
+        </div>
+        <div class="news-card-full-body">
+          <h3>OUCRU | Nền tảng giám sát từ xa và khả năng mở rộng để xác định đặc điểm của bệnh và quản lý bệnh nhân trong đại dịch và các bệnh nhiêm trùng hệ quả cao</h3>
+          <p>Dự án hợp tác giữa iParamed, Đơn vị nghiên cứu lâm sàng Đại học Oxford ("OUCRU"), Bệnh viện Bệnh nhiệt đới và các bác sĩ, chuyên gia trong Đại dịch Covid-19</p>
+          <a href="https://www.oucru.org/vi/project/cac-nen-tang-giam-sat-tu-xa-gia-ca-phai-chang-va-co-kha-nang-mo-rong-de-xac-dinh-dac-diem-cua-benh-va-quan-ly-benh-nhan-trong-dai-dich-va-cac-benh-nhiem-trung-he-qua-cao/" class="news-read-link" target="_blank" rel="noopener noreferrer">Đọc thêm →</a>
+        </div>
+      </article>
+
+      <!-- Article 2 -->
+      <article class="news-card-full fade-up" data-category="featured">
+        <div class="news-card-full-image">
+          <img src="assets/images/pr-vnexpress.png" alt="Vietnam Plus">
+          <span class="news-card-full-tag">Tin nổi bật</span>
+        </div>
+        <div class="news-card-full-body">
+          <h3>Vietnam Plus | Ứng dụng công nghệ cập nhật từ xa chỉ số sức khỏe bệnh nhân COVID-19</h3>
+          <p>Nếu tình trạng của bệnh nhân diễn biến xấu, thông số không nằm trong khoảng an toàn cho phép, tín hiệu báo động sẽ được chuyển đến trung tâm ngay lập tức để các bác sỹ kịp thời can thiệp.</p>
+          <a href="https://www.vietnamplus.vn/ung-dung-cong-nghe-cap-nhat-tu-xa-chi-so-suc-khoe-benh-nhan-covid-19-post/37744.vnp" class="news-read-link" target="_blank" rel="noopener noreferrer">Đọc thêm →</a>
+        </div>
+      </article>
+
+      <!-- Article 3 -->
+      <article class="news-card-full fade-up" data-category="featured">
+        <div class="news-card-full-image">
+          <img src="assets/images/pr-oucru-research.png" alt="Báo Tin tức">
+          <span class="news-card-full-tag">Tin nổi bật</span>
+        </div>
+        <div class="news-card-full-body">
+          <h3>Báo Tin tức | Ứng dụng công nghệ cập nhật từ xa chỉ số sức khỏe bệnh nhân COVID-19</h3>
+          <p>Ngày 31/8, Công ty iParamed cho biết, doanh nghiệp đã phối hợp OUCRU - đơn vị nghiên cứu lâm sàng Đại học Oxford (Anh), nghiên cứu giải pháp công nghệ cao mang tên Tele-ICU Monitoring để ứng dụng trong việc điều trị bệnh nhân COVID-19</p>
+          <a href="https://baotintuc.vn/khoa-hoc-doi-song/ung-dung-cong-nghe-cap-nhat-tu-xa-chi-so-suc-khoe-benh-nhan-covid19-20210831184819490.htm" class="news-read-link" target="_blank" rel="noopener noreferrer">Đọc thêm →</a>
+        </div>
+      </article>
+
+      <!-- Article 4 -->
+      <article class="news-card-full fade-up" data-category="featured">
+        <div class="news-card-full-image">
+          <img src="assets/images/research-oucru.png" alt="Nhịp cầu Đầu tư">
+          <span class="news-card-full-tag">Tin nổi bật</span>
+        </div>
+        <div class="news-card-full-body">
+          <h3>Nhịp cầu Đầu tư | Tiết kiệm nhân lực và hạn chế lây nhiễm trong điều trị bệnh nhân Covid-19 nhờ giải pháp công nghệ mới</h3>
+          <p>Nhiều nơi rơi vào tình trạng quá tải, nhất là ở các cơ sở điều trị cho bệnh nhân F0. Với mong muốn cùng chung sức với lực lượng y tế quyết tâm đẩy lùi dịch bệnh, công ty iParamed phối hợp cùng OUCRU - Đơn vị Nghiên cứu lâm sàng Đại học Oxford (Anh)</p>
+          <a href="https://nhipcaudautu.vn/doanh-nghiep/tiet-kiem-nhan-luc-va-han-che-lay-nhiem-trong-dieu-tri-benh-nhan-covid-19-nho-giai-phap-cong-nghe-moi-3341873/" class="news-read-link" target="_blank" rel="noopener noreferrer">Đọc thêm →</a>
+        </div>
+      </article>
+
+      <!-- Article 5 -->
+      <article class="news-card-full fade-up" data-category="featured">
+        <div class="news-card-full-image">
+          <img src="assets/images/photoshoot-device-hand.png" alt="Báo Thanh Niên">
+          <span class="news-card-full-tag">Tin nổi bật</span>
+        </div>
+        <div class="news-card-full-body">
+          <h3>Báo Thanh Niên | Ứng dụng giải pháp công nghệ Tele-ICU Monitoring vào theo dõi bệnh nhân Covid-19 từ xa</h3>
+          <p>Tele-ICU Monitoring là giải pháp sử dụng công nghệ internet vạn vật (IoT), cho phép các bác sĩ, điều dưỡng có thể theo dõi thể trạng người bệnh từ xa...</p>
+          <a href="https://thanhnien.vn/ung-dung-giai-phap-cong-nghe-tele-icu-monitoring-vao-theo-doi-benh-nhan-covid-19-tu-xa-1851107288.htm" class="news-read-link" target="_blank" rel="noopener noreferrer">Đọc thêm →</a>
+        </div>
+      </article>
+
+      <!-- Article 6 -->
+      <article class="news-card-full fade-up" data-category="featured">
+        <div class="news-card-full-image">
+          <img src="assets/images/pr-vnexpress.png" alt="VnExpress">
+          <span class="news-card-full-tag">Tin nổi bật</span>
+        </div>
+        <div class="news-card-full-body">
+          <h3>VnExpress | Phần mềm ứng dụng IoT hỗ trợ theo dõi thể trạng, điều trị bệnh nhân Covid-19 từ xa</h3>
+          <p>Hệ thống có tên Tele-ICU Monitoring do nhóm 20 thành viên dự án iParamed phát triển, hỗ trợ bác sỹ điều trị bệnh nhân Covid-19. Phần mềm này được phát triển trong 6 tháng, ứng dụng IoT cho phép nhân viên y tế theo dõi thể trạng người bệnh từ xa</p>
+          <a href="https://vnexpress.net/phan-mem-ho-tro-dieu-tri-benh-nhan-covid-19-tu-xa-4350573.html" class="news-read-link" target="_blank" rel="noopener noreferrer">Đọc thêm →</a>
+        </div>
+      </article>
+
+    </div><!-- end news-full-grid -->
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="margin-bottom:0;">
+          <div class="nav-logo-wordmark">
+            <span class="nav-logo-name"><span class="bio">Bio</span><span class="senses">Senses</span></span>
+            <span class="nav-logo-tagline">Giải pháp giám sát sức khoẻ bệnh nhân từ xa</span>
+          </div>
+        </a>
+        <p>Công ty TNHH BioSenses<br/>GPĐKKD: Số 03161627690 Sở KHĐT TPHCM<br/>Cấp ngày: 02/04/2026</p>
+        <div class="footer-addresses">
+          <div class="footer-address-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div><strong>Trụ sở chính</strong>28-30 Trần Đình Xu, P. Cầu Ông Lãnh, Tp. Hồ Chí Minh</div>
+          </div>
+          <div class="footer-address-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div><strong>Văn phòng Đại diện Việt Nam</strong>Số 6 Nguyễn Siêu, P. Bến Nghé, Tp. Hồ Chí Minh</div>
+          </div>
+          <div class="footer-address-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div><strong>Văn phòng Đại diện Singapore</strong>No 36 Robinson Road, #02-111, City House, Singapore (068877)</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Giải pháp</h4>
+        <nav class="footer-links">
+          <a href="bio-sleepcare.html">BIO SLEEPCARE™</a>
+          <a href="bio-rhythm.html">BIO RHYTHM™</a>
+          <a href="#">BIO CARDICARE™</a>
+          <a href="bio-telecare.html">BIO TELECARE™</a>
+          <a href="#">BIO RESEARCH™</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h4>Công ty</h4>
+        <nav class="footer-links">
+          <a href="about.html">Về chúng tôi</a>
+          <a href="news.html">Tin tức &amp; Sự kiện</a>
+          <a href="advisory.html">Đội ngũ chuyên gia</a>
+          <a href="contact.html">Liên hệ</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h4>Pháp lý</h4>
+        <nav class="footer-links">
+          <a href="policy.html#policy-privacy">Chính sách bảo mật</a>
+          <a href="policy.html#policy-return">Chính sách cung cấp, đổi huỷ &amp; hoàn phí</a>
+          <a href="policy.html#policy-payment">Chính sách thanh toán &amp; Điều kiện giao dịch</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 BioSenses. All rights reserved.</span>
+      <span>Thiết kế bởi BioSenses Technology</span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+  /* News filter tabs */
+  (function () {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.news-card-full');
+
+    filterBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        filterBtns.forEach(function (b) {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+
+        var filter = btn.dataset.filter;
+        cards.forEach(function (card) {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+  })();
+</script>
+</body>
+</html>

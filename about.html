@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Về Chúng Tôi | BioSenses</title>
+  <meta name="description" content="BioSenses là công ty công nghệ y tế tiên phong trong lĩnh vực giám sát sức khoẻ bệnh nhân từ xa, được phát triển từ nghiên cứu lâm sàng với OUCRU – Đại học Oxford." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <style>
+    /* ── About Hero ── */
+    .about-hero {
+      background: linear-gradient(135deg, #0B2545 0%, #0d3168 60%, #091e3a 100%);
+      padding-top: calc(var(--nav-height) + 100px);
+      padding-bottom: 100px;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 70% at 20% 50%, rgba(20,184,212,.13) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 80% 30%, rgba(20,184,212,.07) 0%, transparent 60%),
+        repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(255,255,255,.012) 40px, rgba(255,255,255,.012) 41px);
+    }
+    .about-hero .container { position: relative; z-index: 1; }
+    .about-hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .about-hero h1 { color: #fff; margin-bottom: 20px; }
+    .about-hero p { color: rgba(255,255,255,.72); font-size: 1.05rem; line-height: 1.75; margin-bottom: 32px; }
+    .about-hero-visual {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0,0,0,.4);
+    }
+    .about-hero-visual img {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+      display: block;
+    }
+    .about-hero-visual::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(11,37,69,.6) 0%, transparent 50%);
+    }
+
+    /* ── Key stats bar ── */
+    .stats-bar {
+      background: var(--color-white);
+      border-radius: var(--radius-xl);
+      padding: 48px 56px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      box-shadow: var(--shadow-lg);
+      margin-top: -56px;
+      position: relative;
+      z-index: 10;
+    }
+    .stats-bar-item { text-align: center; }
+    .stats-bar-item .stat-num {
+      font-size: 2.6rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: var(--color-primary);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stats-bar-item .stat-num span { color: var(--color-accent); }
+    .stats-bar-item p {
+      font-size: .82rem;
+      color: var(--color-text-muted);
+      line-height: 1.4;
+      margin: 0;
+    }
+    .stats-bar-divider {
+      width: 1px;
+      background: var(--color-border);
+      align-self: stretch;
+      margin: 8px 0;
+    }
+
+    /* ── Mission/Vision ── */
+    .mv-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+    .mv-card {
+      background: var(--color-white);
+      border-radius: var(--radius-xl);
+      padding: 48px 44px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(0,0,0,.04);
+      position: relative;
+      overflow: hidden;
+    }
+    .mv-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-primary) 100%);
+      border-radius: 4px 4px 0 0;
+    }
+    .mv-card-label {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 16px;
+    }
+    .mv-card h3 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      margin-bottom: 20px;
+      color: var(--color-primary);
+    }
+    .mv-card p { font-size: .95rem; line-height: 1.75; color: var(--color-text-muted); margin: 0; }
+
+    /* ── Origin timeline ── */
+    .origin-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 20px;
+      position: relative;
+    }
+    .timeline-item + .timeline-item { margin-top: 0; }
+    .timeline-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .timeline-dot {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      border: 3px solid var(--color-white);
+      box-shadow: 0 0 0 3px var(--color-accent);
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+    .timeline-line {
+      width: 2px;
+      flex: 1;
+      background: linear-gradient(to bottom, var(--color-accent), rgba(20,184,212,.15));
+      min-height: 48px;
+    }
+    .timeline-body { padding-bottom: 40px; }
+    .timeline-year {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 6px;
+    }
+    .timeline-body h4 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; color: var(--color-primary); }
+    .timeline-body p { font-size: .88rem; color: var(--color-text-muted); line-height: 1.65; margin: 0; }
+
+    .origin-photos { display: flex; flex-direction: column; gap: 20px; }
+    .origin-photo-main {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+    }
+    .origin-photo-main img { width: 100%; height: 300px; object-fit: cover; display: block; }
+    .origin-photo-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .origin-photo-sm { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); }
+    .origin-photo-sm img { width: 100%; height: 180px; object-fit: cover; display: block; }
+
+    /* ── Core values ── */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .value-card {
+      background: var(--color-white);
+      border-radius: var(--radius-xl);
+      padding: 40px 36px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(0,0,0,.04);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .value-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    .value-icon {
+      width: 56px; height: 56px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, rgba(20,184,212,.12), rgba(11,37,69,.08));
+      display: flex; align-items: center; justify-content: center;
+      color: var(--color-accent);
+      margin-bottom: 20px;
+    }
+    .value-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; }
+    .value-card p { font-size: .88rem; color: var(--color-text-muted); line-height: 1.65; margin: 0; }
+
+    /* ── Ecosystem section ── */
+    .ecosystem-visual {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+      margin-top: 48px;
+    }
+    .ecosystem-visual img { width: 100%; display: block; }
+
+    /* ── Partners ── */
+    .partner-logos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+      align-items: center;
+    }
+    .partner-logo-item {
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      padding: 20px 28px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(0,0,0,.04);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      transition: transform var(--transition), box-shadow var(--transition);
+      min-width: 120px;
+    }
+    .partner-logo-item:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .partner-logo-item img { height: 40px; width: auto; object-fit: contain; }
+    .partner-logo-item span { font-size: .72rem; font-weight: 600; color: var(--color-text-muted); text-align: center; }
+
+    /* ── CTA Banner ── */
+    .about-cta-banner {
+      background: linear-gradient(135deg, #0B2545 0%, #0d3168 100%);
+      border-radius: var(--radius-xl);
+      padding: 72px 64px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+    }
+    .about-cta-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 0% 50%, rgba(20,184,212,.15) 0%, transparent 60%);
+    }
+    .about-cta-banner > * { position: relative; z-index: 1; }
+    .about-cta-banner h2 { color: #fff; margin-bottom: 12px; font-size: 2rem; }
+    .about-cta-banner p { color: rgba(255,255,255,.7); margin: 0; font-size: .95rem; }
+    .about-cta-btns { display: flex; flex-direction: column; gap: 12px; align-items: flex-end; white-space: nowrap; }
+
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
+      .about-hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-hero-visual img { height: 320px; }
+      .stats-bar { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .stats-bar-divider { display: none; }
+      .mv-grid { grid-template-columns: 1fr; }
+      .origin-layout { grid-template-columns: 1fr; gap: 48px; }
+      .values-grid { grid-template-columns: 1fr 1fr; }
+      .about-cta-banner { grid-template-columns: 1fr; padding: 48px 40px; }
+      .about-cta-btns { align-items: flex-start; flex-direction: row; }
+    }
+    @media (max-width: 768px) {
+      .stats-bar { padding: 36px 28px; grid-template-columns: repeat(2, 1fr); }
+      .stats-bar-item .stat-num { font-size: 2rem; }
+      .values-grid { grid-template-columns: 1fr; }
+      .mv-card { padding: 36px 28px; }
+      .about-cta-banner { padding: 40px 28px; }
+      .about-cta-banner h2 { font-size: 1.5rem; }
+      .about-cta-btns { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════════════ -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-wordmark">
+        <span class="nav-logo-name"><span class="bio">Bio</span><span class="senses">Senses</span></span>
+        <span class="nav-logo-tagline">Giải pháp giám sát sức khoẻ bệnh nhân từ xa</span>
+      </div>
+    </a>
+    <ul class="nav-menu" role="list">
+      <li class="nav-item has-dropdown">
+        <a href="index.html#solutions" class="nav-link" aria-haspopup="true" aria-expanded="false">
+          Giải pháp
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="nav-dropdown" role="menu">
+          <a href="bio-sleepcare.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dot"></span> BIO SLEEPCARE™</a>
+          <a href="bio-rhythm.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dot"></span> BIO RHYTHM™</a>
+          <a href="#" class="nav-dropdown-item" role="menuitem"><span class="nav-dot"></span> BIO CARDICARE™ <span class="badge-soon">Sắp ra mắt</span></a>
+          <a href="bio-telecare.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dot"></span> BIO TELECARE™</a>
+          <a href="#" class="nav-dropdown-item" role="menuitem"><span class="nav-dot"></span> BIO RESEARCH™ <span class="badge-soon">Sắp ra mắt</span></a>
+        </div>
+      </li>
+      <li class="nav-item has-dropdown">
+        <a href="about.html" class="nav-link active" aria-haspopup="true" aria-expanded="false">
+          Về BioSenses
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="nav-dropdown" role="menu">
+          <a href="about.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dot"></span> Về BioSenses</a>
+          <a href="advisory.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dot"></span> Đội ngũ chuyên gia</a>
+        </div>
+      </li>
+      <li class="nav-item"><a href="news.html" class="nav-link">Tin tức &amp; Sự kiện</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Thư viện Y khoa</a></li>
+    </ul>
+    <div class="nav-cta"><a href="contact.html" class="btn btn-primary btn-sm">Kết nối cùng chúng tôi</a></div>
+    <button class="hamburger" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════ -->
+<section class="about-hero" aria-label="About Hero">
+  <div class="container">
+    <div class="about-hero-grid">
+      <div>
+        <div class="section-label" style="margin-bottom:20px;">Về BioSenses</div>
+        <h1>Công nghệ y tế<br>xuất phát từ<br><span class="hl">nghiên cứu lâm sàng</span></h1>
+        <p>BioSenses là công ty công nghệ y tế tiên phong xây dựng nền tảng IoMT giám sát sức khoẻ bệnh nhân từ xa — kết hợp thiết bị y tế chuẩn xác, phần mềm thông minh và đội ngũ chuyên gia lâm sàng để mang lại <strong style="color:rgba(255,255,255,.9)">chăm sóc y tế chất lượng cao tại nhà.</strong></p>
+        <div class="hero-btns">
+          <a href="contact.html" class="btn btn-primary btn-lg">Hợp tác cùng chúng tôi</a>
+          <a href="advisory.html" class="btn btn-outline-white btn-lg">Đội ngũ cố vấn →</a>
+        </div>
+      </div>
+      <div class="about-hero-visual">
+        <img src="assets/images/photoshoot-consultation.png" alt="BioSenses — Tư vấn y tế từ xa">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     KEY STATS BAR
+═══════════════════════════════════════════════ -->
+<section style="padding: 0 0 80px;">
+  <div class="container">
+    <div class="stats-bar fade-up">
+      <div class="stats-bar-item">
+        <div class="stat-num">2,000<span>+</span></div>
+        <p>Lượt theo dõi sức khoẻ<br>từ xa thành công</p>
+      </div>
+      <div class="stats-bar-divider"></div>
+      <div class="stats-bar-item">
+        <div class="stat-num">30,000<span>+</span></div>
+        <p>Giờ dữ liệu sinh hiệu<br>được thu thập & phân tích</p>
+      </div>
+      <div class="stats-bar-divider"></div>
+      <div class="stats-bar-item">
+        <div class="stat-num">5<span>+</span></div>
+        <p>Năm nghiên cứu &amp;<br>phát triển lâm sàng</p>
+      </div>
+      <div class="stats-bar-divider"></div>
+      <div class="stats-bar-item">
+        <div class="stat-num">3</div>
+        <p>Văn phòng tại Việt Nam<br>&amp; Singapore</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     MISSION & VISION
+═══════════════════════════════════════════════ -->
+<section class="section bg-light">
+  <div class="container">
+    <div class="section-header centered">
+      <div class="section-label">Sứ mệnh & Tầm nhìn</div>
+      <h2>Chúng tôi tồn tại vì<br><span class="hl">sức khoẻ của bạn</span> quan trọng hơn</h2>
+    </div>
+    <div class="mv-grid">
+      <div class="mv-card fade-up">
+        <div class="mv-card-label">Sứ mệnh</div>
+        <h3>Dân chủ hoá chăm sóc sức khoẻ chuyên sâu</h3>
+        <p>Chúng tôi tin rằng mỗi người đều xứng đáng được hưởng chất lượng chăm sóc y tế của bệnh viện — ngay tại nhà. BioSenses xây dựng hạ tầng công nghệ y tế giúp bác sĩ theo dõi và can thiệp sớm cho bệnh nhân từ xa, giảm gánh nặng bệnh viện và nâng cao chất lượng sống của cộng đồng.</p>
+      </div>
+      <div class="mv-card fade-up">
+        <div class="mv-card-label">Tầm nhìn</div>
+        <h3>Trở thành hạ tầng IoMT y tế số 1 Đông Nam Á</h3>
+        <p>Đến 2030, BioSenses hướng tới xây dựng mạng lưới theo dõi sức khoẻ từ xa phủ rộng trên toàn khu vực Đông Nam Á — kết nối hàng triệu bệnh nhân mãn tính với đội ngũ y bác sĩ chuyên môn, thông qua dữ liệu sinh hiệu thời gian thực được hỗ trợ bởi trí tuệ nhân tạo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     ORIGIN STORY (TIMELINE)
+═══════════════════════════════════════════════ -->
+<section class="section bg-white">
+  <div class="container">
+    <div class="origin-layout">
+      <!-- Timeline -->
+      <div>
+        <div class="section-label" style="margin-bottom:12px;">Câu chuyện hình thành</div>
+        <h2 style="margin-bottom:48px;">Từ phòng nghiên cứu<br>đến <span class="hl">thực tiễn lâm sàng</span></h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-left">
+              <div class="timeline-dot"></div>
+              <div class="timeline-line"></div>
+            </div>
+            <div class="timeline-body">
+              <div class="timeline-year">2019 – 2021</div>
+              <h4>Nghiên cứu lâm sàng tại OUCRU</h4>
+              <p>Nền tảng iParamed được khởi tạo từ hợp tác nghiên cứu giữa Đơn vị Nghiên cứu Lâm sàng Đại học Oxford tại Việt Nam (OUCRU) và Bệnh viện Bệnh Nhiệt Đới TP.HCM — để thu thập, đồng bộ và phân tích dữ liệu sinh hiệu từ xa trong môi trường lâm sàng nghiêm ngặt.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-left">
+              <div class="timeline-dot"></div>
+              <div class="timeline-line"></div>
+            </div>
+            <div class="timeline-body">
+              <div class="timeline-year">2021 – 2023</div>
+              <h4>Kiểm chứng và mở rộng quy mô</h4>
+              <p>Sau giai đoạn thử nghiệm với hơn 2.000 lượt theo dõi và 30.000+ giờ dữ liệu sinh hiệu, iParamed đạt tiêu chuẩn toàn vẹn dữ liệu theo yêu cầu nghiên cứu quốc tế. Nền tảng được xây dựng theo chuẩn HL7 FHIR, tích hợp API/SDK với HIS/EMR.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-left">
+              <div class="timeline-dot"></div>
+              <div class="timeline-line"></div>
+            </div>
+            <div class="timeline-body">
+              <div class="timeline-year">2024</div>
+              <h4>Thương mại hoá — Ra mắt BioSenses</h4>
+              <p>BioSenses được thành lập để đưa iParamed vào ứng dụng thương mại. Ra mắt các giải pháp BIO SLEEPCARE™ và BIO RHYTHM™ tại thị trường Việt Nam, hợp tác với các bệnh viện và phòng khám trên toàn quốc.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-left">
+              <div class="timeline-dot"></div>
+              <div class="timeline-line"></div>
+            </div>
+            <div class="timeline-body">
+              <div class="timeline-year">2026 — Hiện tại</div>
+              <h4>Mở rộng hệ sinh thái &amp; khu vực</h4>
+              <p>Phát triển hệ sinh thái 5 giải pháp toàn diện: BIO SLEEPCARE™, BIO RHYTHM™, BIO CARDICARE™, BIO TELECARE™ và BIO RESEARCH™. Mở rộng sang thị trường Singapore và Đông Nam Á.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Photos -->
+      <div class="origin-photos fade-up">
+        <div class="origin-photo-main">
+          <img src="assets/images/research-oucru.png" alt="OUCRU – Oxford – iParamed Research">
+        </div>
+        <div class="origin-photo-row">
+          <div class="origin-photo-sm">
+            <img src="assets/images/photoshoot-device-hand.png" alt="Thiết bị y tế BioSenses">
+          </div>
+          <div class="origin-photo-sm">
+            <img src="assets/images/photoshoot-patient.png" alt="Bệnh nhân sử dụng BioSenses">
+          </div>
+        </div>
+        <div class="origin-photo-main" style="margin-top:0;">
+          <img src="assets/images/iomt-system.png" alt="Hệ sinh thái IoMT BioSenses" style="height:220px;object-fit:contain;background:#F5F5F7;padding:24px;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     CORE VALUES
+═══════════════════════════════════════════════ -->
+<section class="section bg-light">
+  <div class="container">
+    <div class="section-header centered">
+      <div class="section-label">Giá trị cốt lõi</div>
+      <h2>Những nguyên tắc<br>định hướng <span class="hl">mọi quyết định</span></h2>
+    </div>
+    <div class="values-grid">
+      <div class="value-card fade-up">
+        <div class="value-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+          </svg>
+        </div>
+        <h3>Độ tin cậy lâm sàng</h3>
+        <p>Mỗi giải pháp đều được kiểm chứng bởi nghiên cứu khoa học và đội ngũ chuyên gia y tế. Không có chỗ cho dữ liệu không chính xác khi sức khoẻ con người là thứ chúng tôi bảo vệ.</p>
+      </div>
+      <div class="value-card fade-up">
+        <div class="value-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+          </svg>
+        </div>
+        <h3>Can thiệp sớm, kịp thời</h3>
+        <p>Giá trị của theo dõi từ xa nằm ở việc phát hiện sớm — trước khi biến chứng xảy ra. Chúng tôi thiết kế mọi tính năng với mục tiêu: đưa thông tin đúng, đến đúng người, vào đúng thời điểm.</p>
+      </div>
+      <div class="value-card fade-up">
+        <div class="value-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <h3>Đặt bệnh nhân làm trung tâm</h3>
+        <p>Mọi quyết định thiết kế sản phẩm đều xuất phát từ một câu hỏi: "Điều này có thực sự giúp ích cho bệnh nhân không?" Trải nghiệm người dùng đơn giản là điều kiện tiên quyết, không phải tùy chọn.</p>
+      </div>
+      <div class="value-card fade-up">
+        <div class="value-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </div>
+        <h3>Bảo mật &amp; Minh bạch</h3>
+        <p>Dữ liệu sức khoẻ là thứ nhạy cảm nhất. Chúng tôi cam kết bảo mật tuyệt đối theo tiêu chuẩn HIPAA, không chia sẻ dữ liệu bên thứ ba và minh bạch hoàn toàn về cách thức sử dụng dữ liệu.</p>
+      </div>
+      <div class="value-card fade-up">
+        <div class="value-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
+        <h3>Đổi mới dựa trên dữ liệu</h3>
+        <p>Chúng tôi không phát triển tính năng theo cảm tính. Mọi cải tiến đều được dẫn dắt bởi dữ liệu lâm sàng thực tế, phản hồi từ bác sĩ và bệnh nhân, và bằng chứng khoa học có kiểm chứng.</p>
+      </div>
+      <div class="value-card fade-up">
+        <div class="value-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h3>Hệ sinh thái mở &amp; Tích hợp</h3>
+        <p>BioSenses được xây dựng để tích hợp — không cạnh tranh — với hạ tầng y tế hiện có. API mở, hỗ trợ HL7 FHIR và kết nối với HIS/EMR giúp cơ sở y tế triển khai nhanh mà không cần thay đổi quy trình.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     ECOSYSTEM OVERVIEW
+═══════════════════════════════════════════════ -->
+<section class="section bg-white">
+  <div class="container">
+    <div class="section-header centered">
+      <div class="section-label">Hệ sinh thái sản phẩm</div>
+      <h2><span class="hl-muted">Nền tảng IoMT</span> kết nối<br>thiết bị — dữ liệu — <span class="hl">chuyên gia</span></h2>
+      <p>BioSenses xây dựng hệ sinh thái khép kín từ thiết bị y tế chuẩn FDA, CE đến ứng dụng bệnh nhân, cổng quản lý bác sĩ và nền tảng phân tích dữ liệu lâm sàng.</p>
+    </div>
+
+    <div class="product-grid" style="margin-bottom:48px;">
+      <a href="bio-sleepcare.html" class="product-card" style="text-decoration:none;">
+        <div class="card-icon" style="color:var(--color-accent);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </div>
+        <h3>BIO SLEEPCARE™</h3>
+        <p>Tầm soát Ngưng thở khi ngủ OSA bằng phương pháp đo nồng độ SpO₂ không xâm lấn, tại nhà qua đêm.</p>
+        <span style="font-size:.82rem;font-weight:600;color:var(--color-accent);">Tìm hiểu thêm →</span>
+      </a>
+      <a href="bio-rhythm.html" class="product-card" style="text-decoration:none;">
+        <div class="card-icon" style="color:var(--color-accent);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <h3>BIO RHYTHM™</h3>
+        <p>Giám sát ECG Holter liên tục 24–72 giờ, phân tầng nguy cơ rối loạn nhịp tim bằng AI.</p>
+        <span style="font-size:.82rem;font-weight:600;color:var(--color-accent);">Tìm hiểu thêm →</span>
+      </a>
+      <a href="bio-telecare.html" class="product-card" style="text-decoration:none;">
+        <div class="card-icon" style="color:var(--color-accent);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 6l10.5 6L22 6"/><path d="M1 6v12a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H3a2 2 0 0 0-2 2z"/></svg>
+        </div>
+        <h3>BIO TELECARE™</h3>
+        <p>Chương trình theo dõi sức khoẻ từ xa toàn diện — kết hợp đa thiết bị và đội ngũ chuyên gia lâm sàng.</p>
+        <span style="font-size:.82rem;font-weight:600;color:var(--color-accent);">Tìm hiểu thêm →</span>
+      </a>
+    </div>
+
+    <div class="ecosystem-visual fade-up">
+      <img src="assets/images/iparamed-system.png" alt="Hệ sinh thái iParamed">
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     ADVISORY TEAM TEASER
+═══════════════════════════════════════════════ -->
+<section class="section bg-light">
+  <div class="container">
+    <div class="section-header centered">
+      <div class="section-label">Đội ngũ cố vấn</div>
+      <h2>Được đồng hành bởi<br>các <span class="hl">chuyên gia y tế</span> hàng đầu</h2>
+      <p>Đội ngũ cố vấn chuyên môn của BioSenses bao gồm các giáo sư, bác sĩ đầu ngành trong lĩnh vực Hô hấp, Tim mạch và Y học giấc ngủ tại Việt Nam.</p>
+    </div>
+    <div class="doctors-grid">
+      <div class="doctor-card fade-up">
+        <div class="doctor-card-header">
+          <div class="doctor-avatar" style="overflow:hidden;padding:0;">
+            <img src="assets/images/doctor-duong-quy-sy.jpg" alt="GS. TSKH. BS Dương Quý Sỹ" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+          </div>
+          <h3>GS. TSKH. BS Dương Quý Sỹ</h3>
+          <div class="doctor-title">Chủ tịch Hội Y học Giấc ngủ Việt Nam</div>
+        </div>
+        <div class="doctor-card-body">
+          <p>Chuyên gia hàng đầu về Hô hấp &amp; Y học giấc ngủ với hơn 150 công trình nghiên cứu quốc tế, từng giảng dạy tại Đại học Paris Descartes.</p>
+          <div class="doctor-tags">
+            <span class="doctor-tag">Hô hấp</span>
+            <span class="doctor-tag">Y học giấc ngủ</span>
+            <span class="doctor-tag">Tim mạch</span>
+          </div>
+        </div>
+      </div>
+      <div class="doctor-card fade-up">
+        <div class="doctor-card-header">
+          <div class="doctor-avatar" style="overflow:hidden;padding:0;">
+            <img src="assets/images/doctor-nguyen-thanh-dat.jpg" alt="ThS. BS. Nguyễn Thành Đạt" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+          </div>
+          <h3>ThS. BS. Nguyễn Thành Đạt</h3>
+          <div class="doctor-title">Trưởng ban Nội khoa, Hội Y học Thể thao TP.HCM</div>
+        </div>
+        <div class="doctor-card-body">
+          <p>Chuyên gia về Y học thể thao và Tim mạch, cố vấn chuyên môn cho các giải pháp tầm soát nguy cơ tim mạch và theo dõi vận động.</p>
+          <div class="doctor-tags">
+            <span class="doctor-tag">Tim mạch</span>
+            <span class="doctor-tag">Y học thể thao</span>
+          </div>
+        </div>
+      </div>
+      <div class="doctor-card fade-up">
+        <div class="doctor-card-header">
+          <div class="doctor-avatar" style="overflow:hidden;padding:0;">
+            <img src="assets/images/doctor-nguyen-huu-hoang.jpg" alt="ThS. BS. Nguyễn Hữu Hoàng" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+          </div>
+          <h3>ThS. BS. Nguyễn Hữu Hoàng</h3>
+          <div class="doctor-title">Giảng viên ĐH Y học, Nguyên BS Hô hấp — BV Nhân dân Gia Định</div>
+        </div>
+        <div class="doctor-card-body">
+          <p>Bác sĩ chuyên khoa Hô hấp với kinh nghiệm lâm sàng phong phú, chịu trách nhiệm đánh giá kết quả và tư vấn lâm sàng cho các giải pháp BioSenses.</p>
+          <div class="doctor-tags">
+            <span class="doctor-tag">Hô hấp</span>
+            <span class="doctor-tag">Lâm sàng</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center" style="margin-top:40px;">
+      <a href="advisory.html" class="btn btn-outline">Xem chi tiết đội ngũ →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     PARTNERS & RECOGNITION
+═══════════════════════════════════════════════ -->
+<section class="section bg-white">
+  <div class="container">
+    <div class="section-header centered">
+      <div class="section-label">Đối tác &amp; Chứng nhận</div>
+      <h2>Được xây dựng cùng và<br><span class="hl">được ghi nhận</span> bởi những tên tuổi hàng đầu</h2>
+    </div>
+    <div class="partner-logos">
+      <div class="partner-logo-item">
+        <img src="assets/images/logo-fda.png" alt="FDA">
+        <span>FDA Cleared</span>
+      </div>
+      <div class="partner-logo-item">
+        <img src="assets/images/logo-ce.png" alt="CE Mark">
+        <span>CE Mark</span>
+      </div>
+      <div class="partner-logo-item">
+        <img src="assets/images/logo-oucru.jpg" alt="OUCRU">
+        <span>OUCRU – Oxford</span>
+      </div>
+      <div class="partner-logo-item">
+        <img src="assets/images/logo-oxford.png" alt="Oxford">
+        <span>Oxford University</span>
+      </div>
+      <div class="partner-logo-item">
+        <img src="assets/images/logo-aha.png" alt="AHA">
+        <span>American Heart Assoc.</span>
+      </div>
+      <div class="partner-logo-item">
+        <img src="assets/images/logo-nih.png" alt="NIH">
+        <span>NIH</span>
+      </div>
+      <div class="partner-logo-item">
+        <img src="assets/images/logo-bv-nhiet-doi.jpg" alt="BV Nhiệt Đới">
+        <span>BV Nhiệt Đới TPHCM</span>
+      </div>
+      <div class="partner-logo-item">
+        <img src="assets/images/logo-bv-nguyen-trai.png" alt="BV Nguyễn Trãi">
+        <span>BV Nguyễn Trãi</span>
+      </div>
+      <div class="partner-logo-item">
+        <img src="assets/images/logo-bv-y-duoc.webp" alt="BV ĐH Y Dược">
+        <span>BV ĐH Y Dược TPHCM</span>
+      </div>
+      <div class="partner-logo-item">
+        <img src="assets/images/logo-bv-tim-tam-duc.jpg" alt="BV Tim Tâm Đức">
+        <span>BV Tim Tâm Đức</span>
+      </div>
+      <div class="partner-logo-item">
+        <img src="assets/images/logo-hoi-the-thao.png" alt="Hội Y học Thể thao">
+        <span>Hội Y học Thể thao</span>
+      </div>
+      <div class="partner-logo-item">
+        <img src="assets/images/logo-sleepfi.png" alt="SleepFi">
+        <span>SleepFi</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     CTA BANNER
+═══════════════════════════════════════════════ -->
+<section class="section bg-light">
+  <div class="container">
+    <div class="about-cta-banner fade-up">
+      <div>
+        <h2>Cùng BioSenses mang chăm sóc y tế<br>chuyên sâu đến gần hơn</h2>
+        <p>Dù bạn là phòng khám, bệnh viện hay nhà nghiên cứu — hãy liên hệ để khám phá cách chúng tôi có thể đồng hành cùng bạn.</p>
+      </div>
+      <div class="about-cta-btns">
+        <a href="contact.html" class="btn btn-primary btn-lg">Liên hệ hợp tác</a>
+        <a href="index.html#solutions" class="btn btn-outline-white btn-lg">Khám phá giải pháp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="margin-bottom:0;">
+          <div class="nav-logo-wordmark">
+            <span class="nav-logo-name"><span class="bio">Bio</span><span class="senses">Senses</span></span>
+            <span class="nav-logo-tagline">Giải pháp giám sát sức khoẻ bệnh nhân từ xa</span>
+          </div>
+        </a>
+        <p>Công ty TNHH BioSenses<br/>GPĐKKD: Số 03161627690 Sở KHĐT TPHCM<br/>Cấp ngày: 02/04/2026</p>
+        <div class="footer-addresses">
+          <div class="footer-address-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div><strong>Trụ sở chính</strong>28-30 Trần Đình Xu, P. Cầu Ông Lãnh, Tp. Hồ Chí Minh</div>
+          </div>
+          <div class="footer-address-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div><strong>Văn phòng Đại diện Việt Nam</strong>Số 6 Nguyễn Siêu, P. Bến Nghé, Tp. Hồ Chí Minh</div>
+          </div>
+          <div class="footer-address-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div><strong>Văn phòng Đại diện Singapore</strong>No 36 Robinson Road, #02-111, City House, Singapore (068877)</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Giải pháp</h4>
+        <nav class="footer-links">
+          <a href="bio-sleepcare.html">BIO SLEEPCARE™</a>
+          <a href="bio-rhythm.html">BIO RHYTHM™</a>
+          <a href="#">BIO CARDICARE™</a>
+          <a href="bio-telecare.html">BIO TELECARE™</a>
+          <a href="#">BIO RESEARCH™</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h4>Công ty</h4>
+        <nav class="footer-links">
+          <a href="about.html">Về chúng tôi</a>
+          <a href="news.html">Tin tức &amp; Sự kiện</a>
+          <a href="advisory.html">Đội ngũ chuyên gia</a>
+          <a href="contact.html">Liên hệ</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h4>Pháp lý</h4>
+        <nav class="footer-links">
+          <a href="policy.html#policy-privacy">Chính sách bảo mật</a>
+          <a href="policy.html#policy-return">Chính sách cung cấp, đổi huỷ &amp; hoàn phí</a>
+          <a href="policy.html#policy-payment">Chính sách thanh toán &amp; Điều kiện giao dịch</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 BioSenses. All rights reserved.</span>
+      <span>Thiết kế bởi BioSenses Technology</span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
