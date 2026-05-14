@@ -39,14 +39,31 @@
       background: var(--color-white);
       border: 1px solid var(--color-border);
       border-radius: var(--radius-md);
-      padding: 20px 16px;
+      overflow: hidden;
+      padding: 0;
       text-align: center;
       transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      display: flex;
+      flex-direction: column;
     }
     .sol-mini-card:hover {
       transform: translateY(-3px);
       box-shadow: var(--shadow-md);
       border-color: rgba(20,184,212,.3);
+    }
+    .sol-mini-card-img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      display: block;
+      flex-shrink: 0;
+    }
+    .sol-mini-card-inner {
+      padding: 16px 16px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
     }
     .sol-mini-card .sol-icon {
       width: 44px; height: 44px;
@@ -168,39 +185,54 @@
     </div>
     <div class="solutions-overview">
       <a href="bio-sleepcare.html" class="sol-mini-card" style="text-decoration:none;">
-        <div class="sol-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <img class="sol-mini-card-img" src="assets/images/device-spo2.jpg" alt="BIO SLEEPCARE™" />
+        <div class="sol-mini-card-inner">
+          <div class="sol-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </div>
+          <h4>BIO SLEEPCARE™</h4>
+          <p>Tầm soát Ngưng thở khi ngủ OSA</p>
         </div>
-        <h4>BIO SLEEPCARE™</h4>
-        <p>Tầm soát Ngưng thở khi ngủ OSA</p>
       </a>
       <a href="bio-rhythm.html" class="sol-mini-card" style="text-decoration:none;">
-        <div class="sol-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        <img class="sol-mini-card-img" src="assets/images/device-ecg.jpg" alt="BIO RHYTHM™" />
+        <div class="sol-mini-card-inner">
+          <div class="sol-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h4>BIO RHYTHM™</h4>
+          <p>Giám sát liên tục &amp; Phân tầng nguy cơ tim mạch</p>
         </div>
-        <h4>BIO RHYTHM™</h4>
-        <p>Giám sát liên tục &amp; Phân tầng nguy cơ tim mạch</p>
       </a>
       <div class="sol-mini-card" style="opacity:.7;">
-        <div class="sol-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <img class="sol-mini-card-img" src="assets/images/device-ecg-2.jpg" alt="BIO CARDICARE™" />
+        <div class="sol-mini-card-inner">
+          <div class="sol-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h4>BIO CARDICARE™</h4>
+          <p>Tầm soát Tim mạch &amp; Vận động</p>
         </div>
-        <h4>BIO CARDICARE™</h4>
-        <p>Tầm soát Tim mạch &amp; Vận động</p>
       </div>
       <a href="bio-telecare.html" class="sol-mini-card" style="text-decoration:none;">
-        <div class="sol-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 6l10.5 6L22 6"/><path d="M1 6v12a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H3a2 2 0 0 0-2 2z"/></svg>
+        <img class="sol-mini-card-img" src="assets/images/iparamed-system.png" alt="BIO TELECARE™" />
+        <div class="sol-mini-card-inner">
+          <div class="sol-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 6l10.5 6L22 6"/><path d="M1 6v12a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H3a2 2 0 0 0-2 2z"/></svg>
+          </div>
+          <h4>BIO TELECARE™</h4>
+          <p>Theo dõi sức khoẻ từ xa toàn diện</p>
         </div>
-        <h4>BIO TELECARE™</h4>
-        <p>Theo dõi sức khoẻ từ xa toàn diện</p>
       </a>
       <div class="sol-mini-card" style="opacity:.7;">
-        <div class="sol-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
+        <img class="sol-mini-card-img" src="assets/images/research-oucru.png" alt="BIO RESEARCH™" />
+        <div class="sol-mini-card-inner">
+          <div class="sol-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
+          </div>
+          <h4>BIO RESEARCH™</h4>
+          <p>Nghiên cứu và thực chứng lâm sàng</p>
         </div>
-        <h4>BIO RESEARCH™</h4>
-        <p>Nghiên cứu và thực chứng lâm sàng</p>
       </div>
     </div>
   </div>
@@ -216,12 +248,12 @@
     </div>
 
     <div class="tabs" role="tablist" aria-label="Loại liên hệ">
-      <button class="tab-btn active" role="tab" data-tab="tab-patient" aria-selected="true" aria-controls="tab-patient">Bệnh nhân</button>
-      <button class="tab-btn" role="tab" data-tab="tab-clinic" aria-selected="false" aria-controls="tab-clinic">Phòng khám / Bệnh viện</button>
+      <button class="tab-btn" role="tab" data-tab="tab-patient" aria-selected="false" aria-controls="tab-patient">Bệnh nhân</button>
+      <button class="tab-btn active" role="tab" data-tab="tab-clinic" aria-selected="true" aria-controls="tab-clinic">Phòng khám / Bệnh viện</button>
     </div>
 
     <!-- TAB 1: Bệnh nhân -->
-    <div class="tab-panel active" id="tab-patient" role="tabpanel">
+    <div class="tab-panel" id="tab-patient" role="tabpanel">
       <div class="form-box">
         <form class="form-light" novalidate>
           <div class="form-group">
@@ -251,6 +283,12 @@
             <label>Mô tả nhu cầu / Câu hỏi</label>
             <textarea rows="4" placeholder="Bạn muốn biết thêm về giải pháp nào? Có triệu chứng hay mối quan tâm cụ thể nào không?"></textarea>
           </div>
+          <div class="form-group form-consent" style="margin-bottom:16px;margin-top:16px;">
+            <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:.78rem;color:var(--color-text);line-height:1.5;">
+              <input type="checkbox" name="consent" required style="width:16px;height:16px;flex-shrink:0;accent-color:#00BBA7;margin-top:2px;" />
+              <span>Tôi đồng ý cho BioSenses lưu trữ và sử dụng thông tin để liên hệ tư vấn theo <a href="policy.html#policy-privacy" target="_blank" style="color:#00BBA7;">Chính sách bảo mật</a></span>
+            </label>
+          </div>
           <button type="submit" class="btn btn-primary" style="width:100%;margin-top:20px;justify-content:center;padding:14px;">GỬI YÊU CẦU TƯ VẤN</button>
           <p class="form-note" style="color:var(--color-text-muted);margin-top:10px;text-align:center;">Cam kết bảo mật thông tin. Biosenses sẽ liên hệ trong 24h làm việc.</p>
         </form>
@@ -258,7 +296,7 @@
     </div>
 
     <!-- TAB 2: Phòng khám / Bệnh viện -->
-    <div class="tab-panel" id="tab-clinic" role="tabpanel">
+    <div class="tab-panel active" id="tab-clinic" role="tabpanel">
       <div class="form-box">
         <form class="form-light" novalidate>
           <div class="form-row">
@@ -300,6 +338,12 @@
           <div class="form-group" style="margin-bottom:0;">
             <label>Quy mô &amp; nhu cầu triển khai</label>
             <textarea rows="4" placeholder="Số giường bệnh, quy mô phòng khám, nhu cầu số lượng thiết bị, thời gian dự kiến triển khai..."></textarea>
+          </div>
+          <div class="form-group form-consent" style="margin-bottom:16px;margin-top:16px;">
+            <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:.78rem;color:var(--color-text);line-height:1.5;">
+              <input type="checkbox" name="consent" required style="width:16px;height:16px;flex-shrink:0;accent-color:#00BBA7;margin-top:2px;" />
+              <span>Tôi đồng ý cho BioSenses lưu trữ và sử dụng thông tin để liên hệ tư vấn theo <a href="policy.html#policy-privacy" target="_blank" style="color:#00BBA7;">Chính sách bảo mật</a></span>
+            </label>
           </div>
           <button type="submit" class="btn btn-primary" style="width:100%;margin-top:20px;justify-content:center;padding:14px;">GỬI YÊU CẦU TƯ VẤN</button>
           <p class="form-note" style="color:var(--color-text-muted);margin-top:10px;text-align:center;">Cam kết bảo mật thông tin. Biosenses sẽ liên hệ trong 24h làm việc.</p>

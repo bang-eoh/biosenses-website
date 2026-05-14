@@ -3,11 +3,137 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Đội Ngũ Cố Vấn | BioSenses</title>
-  <meta name="description" content="Đội ngũ cố vấn chuyên môn của BioSenses — các chuyên gia y tế hàng đầu Việt Nam trong lĩnh vực hô hấp, tim mạch và y học giấc ngủ." />
+  <title>ThS. BS. Nguyễn Thành Đạt | BioSenses</title>
+  <meta name="description" content="Hồ sơ chuyên môn ThS. BS. Nguyễn Thành Đạt — Trưởng ban Nội khoa, Hội Y học Thể dục Thể thao TP.HCM, chuyên gia Nội khoa và Y học thể thao." />
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <style>
+    /* Doctor profile hero */
+    .doctor-profile-hero {
+      background: var(--color-primary);
+      padding-top: var(--nav-height);
+      min-height: 520px;
+      display: flex;
+      align-items: stretch;
+      position: relative;
+      overflow: hidden;
+    }
+    .doctor-profile-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 70% 50%, rgba(0,187,167,.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .doctor-profile-hero .container {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      padding: 0;
+      max-width: 100%;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+    .doctor-hero-photo-col {
+      width: 40%;
+      flex-shrink: 0;
+      min-height: 520px;
+      overflow: hidden;
+    }
+    .doctor-hero-photo-col img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+    .doctor-hero-info-col {
+      width: 60%;
+      padding: 64px 72px 64px 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .doctor-hero-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .78rem;
+      color: rgba(255,255,255,.5);
+      margin-bottom: 28px;
+    }
+    .doctor-hero-breadcrumb a {
+      color: rgba(255,255,255,.5);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .doctor-hero-breadcrumb a:hover { color: var(--color-accent); }
+    .doctor-hero-breadcrumb span { color: rgba(255,255,255,.3); }
+    .doctor-hero-degree {
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 12px;
+    }
+    .doctor-hero-name {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      letter-spacing: -.02em;
+    }
+    .doctor-hero-specialty {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,.72);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    .doctor-hero-org {
+      font-size: .9rem;
+      color: rgba(255,255,255,.55);
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+    .doctor-hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .doctor-hero-tag {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 980px;
+      border: 1px solid rgba(0,187,167,.35);
+      color: var(--color-accent);
+      background: rgba(0,187,167,.1);
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--color-accent);
+      text-decoration: none;
+      margin-bottom: 32px;
+      transition: gap 0.2s;
+    }
+    .back-link:hover { gap: 10px; }
+
+    @media (max-width: 900px) {
+      .doctor-profile-hero .container { flex-direction: column; max-width: 100%; }
+      .doctor-hero-photo-col { width: 100%; min-height: 300px; max-height: 360px; }
+      .doctor-hero-info-col { width: 100%; padding: 40px 24px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -56,56 +182,89 @@
   </div>
 </nav>
 
-<!-- HERO COMPACT -->
-<section class="hero-compact" aria-label="Advisory Team Hero">
+<!-- DOCTOR PROFILE HERO -->
+<section class="doctor-profile-hero" aria-label="Doctor Profile Hero">
   <div class="container">
-    <div class="section-label" style="justify-content:center;margin-bottom:16px;">Đội ngũ cố vấn</div>
-    <h1>Đội Ngũ <span class="hl">Cố Vấn</span> Chuyên Môn</h1>
-    <p style="font-size:1.1rem;margin-top:12px;color:rgba(255,255,255,.72);">Được đồng hành bởi các <strong style="color:rgba(255,255,255,.92)">chuyên gia y tế hàng đầu</strong> Việt Nam trong lĩnh vực hô hấp, tim mạch và y học giấc ngủ</p>
+    <div class="doctor-hero-photo-col">
+      <img src="assets/images/doctor-nguyen-thanh-dat.jpg" alt="ThS. BS. Nguyễn Thành Đạt" />
+    </div>
+    <div class="doctor-hero-info-col">
+      <div class="doctor-hero-breadcrumb">
+        <a href="advisory.html">Đội ngũ chuyên gia</a>
+        <span>›</span>
+        <span style="color:rgba(255,255,255,.75)">ThS. BS. Nguyễn Thành Đạt</span>
+      </div>
+      <div class="doctor-hero-degree">Thạc sĩ · Bác sĩ</div>
+      <h1 class="doctor-hero-name">Nguyễn Thành Đạt</h1>
+      <div class="doctor-hero-specialty">Chuyên gia Nội khoa &amp; Y học Thể thao</div>
+      <div class="doctor-hero-org">Trưởng ban Nội khoa — Hội Y học Thể dục Thể thao TP.HCM<br>Chuyên môn: Nội khoa, Y học thể thao, Tim mạch vận động</div>
+      <div class="doctor-hero-tags">
+        <span class="doctor-hero-tag">Nội khoa</span>
+        <span class="doctor-hero-tag">Y học thể thao</span>
+        <span class="doctor-hero-tag">Tim mạch vận động</span>
+        <span class="doctor-hero-tag">Theo dõi sức khoẻ gắng sức</span>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ADVISORY TEAM CARDS -->
+<!-- PROFILE BODY -->
 <section class="section bg-white">
-  <div class="container">
-    <div class="section-header centered">
-      <div class="section-label">Hội đồng chuyên môn</div>
-      <h2>Chuyên gia đồng hành <span class="hl">cùng BioSenses</span></h2>
-      <p>Mỗi giải pháp BioSenses được xây dựng và thẩm định bởi đội ngũ bác sĩ đầu ngành, đảm bảo chất lượng lâm sàng theo tiêu chuẩn quốc tế</p>
-    </div>
+  <div class="container" style="max-width:860px;">
+    <a href="advisory.html" class="back-link">← Quay lại Đội ngũ chuyên gia</a>
 
-    <div class="advisory-home-layout">
+    <div class="doctor-card-lg-body">
 
-      <!-- LEFT: Large navy card — GS Sỹ -->
-      <a href="dr-duong-quy-sy.html" class="advisory-large-card fade-up" aria-label="GS. TSKH. BS Dương Quý Sỹ">
-        <img class="advisory-large-photo" src="assets/images/doctor-duong-quy-sy.jpg" alt="GS. TSKH. BS Dương Quý Sỹ" />
-        <div class="advisory-large-body">
-          <div class="advisory-degree">GS. TSKH. BS</div>
-          <h3>Dương Quý Sỹ</h3>
-          <div class="advisory-position">Chủ tịch Hội Y học Giấc ngủ Việt Nam · Hiệu trưởng CĐYT Lâm Đồng · Bác sĩ chuyên khoa Phổi BV Cochin (Paris) · Giảng viên ĐH Paris Descartes</div>
-          <span class="advisory-role-tag">Hô hấp &amp; Y học giấc ngủ</span>
+      <div class="doctor-section">
+        <h4>Giới thiệu</h4>
+        <p>ThS.BS Nguyễn Thành Đạt hiện là Trưởng ban Nội khoa – Hội Y học Thể dục Thể thao TP.HCM. Với nền tảng chuyên môn vững chắc trong nội khoa và y học thể thao, bác sĩ tập trung vào theo dõi sức khỏe vận động, tầm soát nguy cơ tim mạch và xây dựng lối sống vận động khoa học nhằm nâng cao sức khỏe toàn diện. Bác sĩ tư vấn chuyên môn trong lĩnh vực sức khỏe vận động và tim mạch thể thao, hỗ trợ các trường hợp nguy cơ tim mạch đặc thù trong môi trường gắng sức.</p>
+      </div>
+
+      <div class="doctor-section">
+        <h4>Lĩnh vực chuyên môn</h4>
+        <div class="doctor-expertise-grid">
+          <div class="expertise-tag">Nội khoa</div>
+          <div class="expertise-tag">Y học thể thao</div>
+          <div class="expertise-tag">Tim mạch trong vận động</div>
+          <div class="expertise-tag">Theo dõi sức khỏe gắng sức</div>
         </div>
-      </a>
+      </div>
 
-      <a href="dr-nguyen-huu-hoang.html" class="advisory-card-home fade-up" aria-label="ThS. BS. Nguyễn Hữu Hoàng">
-        <img class="advisory-photo" src="assets/images/doctor-nguyen-huu-hoang.jpg" alt="ThS. BS. Nguyễn Hữu Hoàng" />
-        <div class="advisory-info">
-          <div class="advisory-degree">ThS. BS.</div>
-          <h3>Nguyễn Hữu Hoàng</h3>
-          <div class="advisory-sub">Bác sĩ chuyên khoa Hô hấp · Trung tâm Điều trị bệnh hô hấp Phổi Việt · Giảng viên ĐH Y Dược TP.HCM</div>
-          <span class="advisory-role-tag">Hô hấp &amp; Giấc ngủ</span>
+      <div class="doctor-section">
+        <h4>Kinh nghiệm &amp; Vị trí</h4>
+        <div class="exp-list">
+          <div class="exp-item">Trưởng ban Nội khoa – Hội Y học Thể dục Thể thao TP.HCM</div>
+          <div class="exp-item">Tư vấn chuyên môn trong lĩnh vực sức khỏe vận động và tim mạch thể thao</div>
         </div>
-      </a>
+      </div>
 
-      <a href="dr-nguyen-thanh-dat.html" class="advisory-card-home fade-up" aria-label="ThS. BS. Nguyễn Thành Đạt">
-        <img class="advisory-photo" src="assets/images/doctor-nguyen-thanh-dat.jpg" alt="ThS. BS. Nguyễn Thành Đạt" />
-        <div class="advisory-info">
-          <div class="advisory-degree">ThS. BS.</div>
-          <h3>Nguyễn Thành Đạt</h3>
-          <div class="advisory-sub">Trưởng ban Nội khoa, Hội Y học Thể dục Thể thao TP.HCM · Nội khoa, Y học thể thao, Tim mạch vận động</div>
-          <span class="advisory-role-tag">Nội khoa &amp; Y học thể thao</span>
+      <div class="doctor-section">
+        <h4>Học hàm &amp; Bằng cấp</h4>
+        <div class="doctor-expertise-grid">
+          <div class="expertise-tag">Thạc sĩ Y học – Đại học Y Dược TP.HCM</div>
+          <div class="expertise-tag">Bác sĩ Y khoa – Đại học Y Dược TP.HCM</div>
+          <div class="expertise-tag">Bác sĩ Chuyên khoa I Nội tổng quát – Đại học Y Dược TP.HCM</div>
         </div>
-      </a>
+      </div>
+
+      <div class="doctor-section">
+        <h4>Nghiên cứu &amp; Công bố</h4>
+        <div class="exp-list">
+          <div class="exp-item">Tác giả nhiều báo cáo và bài viết chuyên sâu về tim mạch – hô hấp ở vận động viên</div>
+          <div class="exp-item">Tham gia trình bày tại các hội thảo chuyên ngành về y học thể thao</div>
+        </div>
+      </div>
+
+      <div class="doctor-section">
+        <h4>Vai trò tại BioSenses</h4>
+        <div class="role-box">
+          <div class="exp-list">
+            <div class="exp-item">Cố vấn chuyên môn cho các chương trình tầm soát tim mạch vận động</div>
+            <div class="exp-item">Định hướng nội dung chuyên môn liên quan đến gắng sức và vận động thể thao</div>
+            <div class="exp-item">Hỗ trợ tư vấn chuyên môn cho các trường hợp nguy cơ tim mạch đặc thù</div>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>

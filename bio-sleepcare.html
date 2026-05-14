@@ -11,7 +11,9 @@
 </head>
 <body>
 
-<!-- NAVIGATION -->
+<!-- ═══════════════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════════════ -->
 <nav class="navbar" role="navigation" aria-label="Main navigation">
   <div class="container">
     <a href="index.html" class="nav-logo">
@@ -47,158 +49,326 @@
       <li class="nav-item"><a href="news.html" class="nav-link">Tin tức &amp; Sự kiện</a></li>
       <li class="nav-item"><a href="#" class="nav-link">Thư viện Y khoa</a></li>
     </ul>
-    <div class="nav-cta"><a href="contact.html" class="btn btn-primary btn-sm">Kết nối cùng chúng tôi</a></div>
-    <button class="hamburger" aria-label="Mở menu"><span></span><span></span><span></span></button>
+    <div class="nav-cta">
+      <a href="#contact-form" class="btn btn-primary btn-sm">Kết nối cùng chúng tôi</a>
+    </div>
+    <button class="hamburger" aria-label="Mở menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero-solution" aria-label="BIO SLEEPCARE Hero">
+<!-- ═══════════════════════════════════════════════
+     HERO — full-screen image
+═══════════════════════════════════════════════ -->
+<section class="hero hero-fullscreen" aria-label="BIO SLEEPCARE Hero">
+  <div class="hero-fullscreen-bg">
+    <img src="assets/images/photoshoot-patient.png" alt="" aria-hidden="true">
+  </div>
   <div class="container">
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="index.html">Trang chủ</a>
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-      <span>Giải pháp</span>
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-      <span>BIO SLEEPCARE™</span>
-    </nav>
-    <div class="solution-badge">BIO SLEEPCARE™</div>
-    <h1>Tầm Soát <span class="hl">Ngưng Thở Khi Ngủ</span><br><span class="hl-muted">bằng phương pháp đo</span> SpO₂</h1>
-    <p>Giải pháp theo dõi SpO₂ từ xa hỗ trợ tầm soát nguy cơ ngưng thở khi ngủ tại nhà, giúp mở rộng khả năng tiếp cận screening với <strong style="color:rgba(255,255,255,.9)">chi phí phù hợp</strong> và <strong style="color:rgba(255,255,255,.9)">quy trình triển khai linh hoạt</strong>.</p>
-    <div class="hero-btns">
-      <a href="#contact-form" class="btn btn-primary btn-lg">Tư vấn triển khai</a>
-      <a href="#solution" class="btn btn-outline-white btn-lg">Tìm hiểu giải pháp</a>
-    </div>
-    <div style="margin-top:40px;">
-      <img src="assets/images/device-spo2.jpg" alt="SpO2 Device" style="max-height:200px;width:auto;border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,0.3);">
+    <div class="hero-text-panel">
+      <nav class="breadcrumb" aria-label="Breadcrumb" style="margin-bottom:20px;">
+        <a href="index.html" style="color:rgba(11,37,69,.45);">Trang chủ</a>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(11,37,69,.3)" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        <span style="color:rgba(11,37,69,.45);">Giải pháp</span>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(11,37,69,.3)" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        <span style="color:var(--color-primary);">BIO SLEEPCARE™</span>
+      </nav>
+      <div class="hero-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        BIO SLEEPCARE™
+      </div>
+      <h1>Tầm Soát <span class="hl">Ngưng Thở Khi Ngủ</span> bằng phương pháp đo SpO₂</h1>
+      <p>Giải pháp theo dõi SpO₂ từ xa hỗ trợ tầm soát nguy cơ ngưng thở khi ngủ tại nhà, giúp mở rộng khả năng tiếp cận screening với <strong>chi phí phù hợp</strong> và <strong>quy trình triển khai linh hoạt</strong>.</p>
+      <div class="hero-btns">
+        <a href="#contact-form" class="btn btn-primary btn-lg">Liên hệ ngay →</a>
+        <a href="#solution" class="btn btn-outline btn-lg">Tìm hiểu giải pháp</a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- KEY CREDENTIALS -->
-<section class="section bg-white section--sm">
+<!-- ═══════════════════════════════════════════════
+     PROOF — line separators, no cards
+═══════════════════════════════════════════════ -->
+<div class="proof-strip">
   <div class="container">
-    <div class="credentials-grid">
-      <div class="credential-card fade-up">
-        <div class="credential-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+    <div class="proof-strip-inner">
+      <div class="proof-strip-item">
+        <div class="proof-strip-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
-        <div>
+        <div class="proof-strip-text">
           <h4>Thiết bị đạt chuẩn y tế</h4>
-          <p>Được công nhận bởi Bộ Y Tế Việt Nam, FDA Hoa Kỳ và tiêu chuẩn CE</p>
+          <p>FDA Cleared &amp; CE Mark — được công nhận bởi Bộ Y Tế Việt Nam</p>
         </div>
       </div>
-      <div class="credential-card fade-up">
-        <div class="credential-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <div class="proof-strip-sep"></div>
+      <div class="proof-strip-item">
+        <div class="proof-strip-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 12l2 2 4-4"/><path d="M20.618 5.984A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
         </div>
-        <div>
-          <h4>Hỗ trợ tầm soát OSA diện rộng</h4>
-          <p>Phân tích ODI từ dữ liệu SpO₂ nhằm hỗ trợ sàng lọc với chi phí phù hợp</p>
+        <div class="proof-strip-text">
+          <h4>Kiểm chứng lâm sàng</h4>
+          <p>Phát triển từ nghiên cứu hợp tác OUCRU &amp; Oxford University</p>
         </div>
       </div>
-      <div class="credential-card fade-up">
-        <div class="credential-icon">
+      <div class="proof-strip-sep"></div>
+      <div class="proof-strip-item">
+        <div class="proof-strip-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="proof-strip-text">
+          <h4>Kết quả trong 24 giờ</h4>
+          <p>Bác sĩ chuyên môn thẩm định và gửi báo cáo trong vòng 24h</p>
+        </div>
+      </div>
+      <div class="proof-strip-sep"></div>
+      <div class="proof-strip-item">
+        <div class="proof-strip-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
         </div>
-        <div>
+        <div class="proof-strip-text">
           <h4>Theo dõi tại nhà từ xa</h4>
-          <p>Giảm rào cản tiếp cận tầm soát ngoài bệnh viện — tiện lợi, chi phí hợp lý</p>
+          <p>Không cần nhập viện — bệnh nhân sử dụng ngay tại nhà</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     BỐI CẢNH — full-screen bg, 1/2 text + 1/2 cards
+═══════════════════════════════════════════════ -->
+<section class="section boicanh-section" id="boicanh">
+  <div class="boicanh-bg">
+    <img src="assets/images/research-osa-spo2.png" alt="" aria-hidden="true">
+  </div>
+  <div class="container">
+    <div class="boicanh-grid">
+      <!-- Left: headline + content -->
+      <div class="boicanh-text">
+        <div class="section-label">Bối cảnh</div>
+        <h2><span class="hl">Ngưng thở khi ngủ</span> là yếu tố nguy cơ tim mạch thường <em style="font-style:normal;color:rgba(255,255,255,.55);">bị bỏ sót</em></h2>
+        <p>Hội chứng ngưng thở khi ngủ (OSA) là tình trạng đường thở bị tắc nghẽn lặp đi lặp lại trong khi ngủ, gây ra các đợt gián đoạn hô hấp ngắn. OSA không chỉ ảnh hưởng đến chất lượng giấc ngủ mà còn là yếu tố nguy cơ độc lập cho nhiều bệnh lý tim mạch nghiêm trọng — tăng huyết áp kháng trị, rung nhĩ, suy tim và đột quỵ.</p>
+        <p style="margin-top:14px;">Tuy nhiên, phần lớn bệnh nhân chưa được chẩn đoán do hạn chế tiếp cận với phương pháp đo PSG tiêu chuẩn tại bệnh viện. BIO SLEEPCARE™ lấp đầy khoảng trống này bằng giải pháp theo dõi tại nhà chi phí thấp, dễ triển khai.</p>
+      </div>
+      <!-- Right: 3 fact cards -->
+      <div class="boicanh-cards">
+        <div class="boicanh-card fade-up">
+          <div class="boicanh-card-num">90%</div>
+          <div class="boicanh-card-text">
+            <h4>Chưa được chẩn đoán</h4>
+            <p>Ước tính 90% trường hợp OSA tại Việt Nam chưa được phát hiện và điều trị</p>
+          </div>
+        </div>
+        <div class="boicanh-card fade-up">
+          <div class="boicanh-card-num">+60%</div>
+          <div class="boicanh-card-text">
+            <h4>Nguy cơ đột quỵ</h4>
+            <p>Nguy cơ đột quỵ tăng trên 60% ở bệnh nhân OSA không được điều trị</p>
+          </div>
+        </div>
+        <div class="boicanh-card fade-up">
+          <div class="boicanh-card-num">54%</div>
+          <div class="boicanh-card-text">
+            <h4>Bệnh nhân tiểu đường</h4>
+            <p>54% bệnh nhân tiểu đường tuýp 2 có OSA đi kèm theo các nghiên cứu lâm sàng</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROBLEM -->
-<section class="section bg-light">
-  <div class="container">
-    <div class="section-header centered">
-      <div class="section-label">Vấn đề</div>
-      <h2><span class="hl">Ngưng thở khi ngủ</span> là yếu tố nguy cơ<br>tim mạch thường <span class="hl-muted">bị bỏ sót</span></h2>
-      <p>Hội chứng ngưng thở khi ngủ (OSA) là tình trạng mà đường thở bị tắc nghẽn lặp đi lặp lại trong khi ngủ, gây ra những đợt gián đoạn hô hấp ngắn. OSA không chỉ ảnh hưởng đến chất lượng giấc ngủ mà còn là yếu tố nguy cơ độc lập cho nhiều bệnh lý tim mạch nghiêm trọng, bao gồm tăng huyết áp kháng trị, rung nhĩ, suy tim và đột quỵ. Tuy nhiên, phần lớn bệnh nhân chưa được chẩn đoán do hạn chế tiếp cận với phương pháp đo PSG tiêu chuẩn tại bệnh viện.</p>
-    </div>
-    <div class="stats-grid">
-      <div class="stat-block fade-up">
-        <span class="stat-block-value">90%</span>
-        <span class="stat-block-label">trường hợp OSA chưa được chẩn đoán tại Việt Nam</span>
-      </div>
-      <div class="stat-block fade-up">
-        <span class="stat-block-value">+60%</span>
-        <span class="stat-block-label">nguy cơ đột quỵ ở bệnh nhân OSA không được điều trị</span>
-      </div>
-      <div class="stat-block fade-up">
-        <span class="stat-block-value">+140%</span>
-        <span class="stat-block-label">nguy cơ suy tim liên quan đến OSA mãn tính</span>
-      </div>
-      <div class="stat-block fade-up">
-        <span class="stat-block-value">54%</span>
-        <span class="stat-block-label">bệnh nhân tiểu đường tuýp 2 có OSA đi kèm</span>
-      </div>
-    </div>
-    <div style="margin-top:40px;text-align:center;">
-      <img src="assets/images/research-osa-spo2.png" alt="OSA Research Data" style="max-width:600px;width:100%;border-radius:16px;box-shadow:0 8px 28px rgba(0,0,0,0.08);">
-    </div>
-  </div>
-</section>
-
-<!-- SOLUTION -->
+<!-- ═══════════════════════════════════════════════
+     SOLUTION — headline + sub-headline + 3 cards
+═══════════════════════════════════════════════ -->
 <section class="section bg-white" id="solution">
   <div class="container">
-    <div class="report-grid">
-      <div>
-        <div class="section-label">Giải pháp</div>
-        <h2>Giải pháp tầm soát<br><span class="hl">ngưng thở khi ngủ</span> từ xa</h2>
-        <p>BIO SLEEPCARE™ sử dụng thiết bị đo SpO₂ đạt chuẩn y tế để theo dõi nồng độ oxy trong máu liên tục trong suốt đêm ngủ. Dữ liệu được đồng bộ tự động lên nền tảng iParamed, thuật toán AI phân tích và tính toán chỉ số ODI (Oxygen Desaturation Index) — chỉ số hỗ trợ tầm soát nguy cơ ngưng thở khi ngủ. Báo cáo được bác sĩ chuyên môn thẩm định và tư vấn cho bệnh nhân.</p>
-        <ul class="feature-list">
-          <li>Theo dõi SpO₂ liên tục trong khi ngủ — Hỗ trợ ghi nhận các đợt giảm SpO₂ về đêm</li>
-          <li>Thuật toán tính chỉ số ODI — Hỗ trợ sàng lọc nguy cơ ngưng thở khi ngủ</li>
-          <li>Theo dõi tại nhà từ xa — Giảm rào cản tiếp cận tầm soát ngoài bệnh viện</li>
-          <li>Báo cáo hỗ trợ đánh giá nguy cơ OSA — Được bác sĩ chuyên môn đánh giá và tư vấn</li>
-        </ul>
+    <div class="section-header centered">
+      <div class="section-label">Giải pháp</div>
+      <h2>Giải pháp tầm soát <span class="hl">ngưng thở khi ngủ</span> từ xa</h2>
+      <p>BIO SLEEPCARE™ kết hợp thiết bị đo SpO₂ chuẩn y tế, thuật toán AI phân tích ODI và đội ngũ bác sĩ chuyên môn thẩm định — mang lại kết quả tầm soát đáng tin cậy ngay tại nhà bệnh nhân</p>
+    </div>
+
+    <div class="solution-cards-grid">
+      <div class="solution-feature-card fade-up">
+        <div class="sfc-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <h3>Theo dõi SpO₂ liên tục qua đêm</h3>
+        <p>Thiết bị đeo trên ngón tay ghi lại nồng độ oxy trong máu liên tục suốt 8–10 giờ ngủ. Dữ liệu được tự động đồng bộ lên nền tảng iParamed ngay khi hoàn thành, không cần can thiệp thủ công.</p>
       </div>
-      <div class="report-image-placeholder" style="background:none;border:none;">
-        <img src="assets/images/report-osa-1.jpg" alt="OSA Report" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">
+      <div class="solution-feature-card fade-up">
+        <div class="sfc-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <h3>Phân tích AI — Chỉ số ODI tự động</h3>
+        <p>Thuật toán AI tính toán chỉ số ODI (Oxygen Desaturation Index) — số lần SpO₂ giảm ≥3% mỗi giờ — phân loại mức độ nguy cơ OSA: nhẹ / trung bình / nặng theo tiêu chuẩn lâm sàng quốc tế.</p>
+      </div>
+      <div class="solution-feature-card fade-up">
+        <div class="sfc-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Báo cáo được bác sĩ chuyên môn thẩm định</h3>
+        <p>Bác sĩ hô hấp &amp; y học giấc ngủ của BioSenses đọc, thẩm định và bổ sung nhận xét lâm sàng vào báo cáo. Kết quả được gửi đến phòng khám và bệnh nhân trong vòng 24 giờ.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CLINIC BENEFITS -->
+<!-- ═══════════════════════════════════════════════
+     GIÁ TRỊ MANG LẠI CHO PK — 4 cards + 4 ảnh + 4 USP
+═══════════════════════════════════════════════ -->
 <section class="section bg-light">
   <div class="container">
     <div class="section-header centered">
       <div class="section-label">Lợi ích</div>
-      <h2>Hỗ trợ phòng khám triển khai tầm soát ngưng thở khi ngủ linh hoạt hơn</h2>
-      <p>BIO SLEEPCARE™ được thiết kế để giúp các cơ sở y tế mở rộng danh mục dịch vụ tầm soát mà không cần đầu tư hạ tầng lớn. Mô hình cho thuê thiết bị giúp giảm rủi ro tài chính, trong khi nền tảng kỹ thuật số hỗ trợ bác sĩ quản lý nhiều bệnh nhân đồng thời hiệu quả.</p>
+      <h2>Giá trị mang lại cho <span class="hl">Phòng khám &amp; Bệnh viện</span></h2>
+      <p>BIO SLEEPCARE™ giúp các cơ sở y tế mở rộng dịch vụ tầm soát giấc ngủ mà không cần đầu tư hạ tầng lớn</p>
     </div>
-    <div class="clinic-benefits-grid">
-      <div class="card fade-up">
-        <div class="card-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+    <div class="usp-grid">
+      <div class="usp-card fade-up">
+        <div class="usp-card-img">
+          <img src="assets/images/device-spo2-2.jpg" alt="Mô hình cho thuê thiết bị">
         </div>
-        <h3>Mô hình cho thuê thiết bị</h3>
-        <p>Không cần đầu tư thiết bị ban đầu. BioSenses cung cấp đầy đủ thiết bị, bảo trì và hỗ trợ kỹ thuật trong suốt quá trình triển khai.</p>
+        <div class="usp-card-body">
+          <h3>Không đầu tư hạ tầng</h3>
+          <p>Thiết bị cho thuê theo gói, không cần vốn đầu tư ban đầu. BioSenses cung cấp đầy đủ thiết bị, bảo trì và hỗ trợ kỹ thuật trong suốt quá trình hợp tác.</p>
+        </div>
       </div>
-      <div class="card fade-up">
-        <div class="card-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <div class="usp-card fade-up">
+        <div class="usp-card-img">
+          <img src="assets/images/photoshoot-device-hand.png" alt="Giao thiết bị tận nơi">
         </div>
-        <h3>Hỗ trợ giao thiết bị tận nơi</h3>
-        <p>Đội ngũ hỗ trợ của BioSenses trực tiếp giao thiết bị và hướng dẫn bệnh nhân sử dụng, đảm bảo chất lượng dữ liệu thu thập.</p>
+        <div class="usp-card-body">
+          <h3>Hỗ trợ giao thiết bị tận nơi</h3>
+          <p>Đội ngũ BioSenses trực tiếp giao thiết bị và hướng dẫn bệnh nhân, đảm bảo chất lượng dữ liệu thu thập ngay từ đêm đầu tiên.</p>
+        </div>
       </div>
-      <div class="card fade-up">
-        <div class="card-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <div class="usp-card fade-up">
+        <div class="usp-card-img">
+          <img src="assets/images/portal-dashboard.jpg" alt="Quản lý bệnh nhân">
         </div>
-        <h3>Kết nối đội ngũ chuyên gia</h3>
-        <p>Bác sĩ chuyên môn của BioSenses đọc và thẩm định kết quả, hỗ trợ phòng khám trong việc đánh giá và tư vấn cho bệnh nhân.</p>
+        <div class="usp-card-body">
+          <h3>Quản lý nhiều bệnh nhân cùng lúc</h3>
+          <p>Nền tảng iParamed giúp bác sĩ theo dõi, phân tích và quản lý toàn bộ bệnh nhân tầm soát trên một dashboard tập trung theo thời gian thực.</p>
+        </div>
+      </div>
+      <div class="usp-card fade-up">
+        <div class="usp-card-img">
+          <img src="assets/images/photoshoot-consultation.png" alt="Kết nối chuyên gia">
+        </div>
+        <div class="usp-card-body">
+          <h3>Kết nối đội ngũ chuyên gia</h3>
+          <p>Bác sĩ chuyên môn hô hấp &amp; giấc ngủ của BioSenses thẩm định kết quả, hỗ trợ phòng khám trong việc đánh giá và tư vấn điều trị cho bệnh nhân.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- COMPARISON TABLE -->
+<!-- ═══════════════════════════════════════════════
+     BÁO CÁO — full-size images
+═══════════════════════════════════════════════ -->
+<section class="section bg-white">
+  <div class="container">
+    <div class="section-header centered">
+      <div class="section-label">Báo cáo</div>
+      <h2>Báo cáo lâm sàng chi tiết<br><span class="hl">hỗ trợ bác sĩ ra quyết định</span></h2>
+      <p>Sau mỗi đêm theo dõi, hệ thống tự động tạo báo cáo số hoá với biểu đồ SpO₂ theo thời gian, chỉ số ODI và phân loại mức độ nguy cơ. Bác sĩ chuyên môn thẩm định và bổ sung nhận xét lâm sàng trước khi gửi đến phòng khám và bệnh nhân.</p>
+    </div>
+    <div class="report-full">
+      <img src="assets/images/report-osa-1.jpg" alt="Báo cáo OSA trang 1">
+      <img src="assets/images/report-osa-2.jpg" alt="Báo cáo OSA trang 2">
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     QUY TRÌNH — horizontal tab bar, 3 steps
+═══════════════════════════════════════════════ -->
+<section class="section bg-light">
+  <div class="container">
+    <div class="section-header centered">
+      <div class="section-label">Quy trình</div>
+      <h2>Quy trình tầm soát<br><span class="hl">đơn giản và linh hoạt</span></h2>
+      <p>Từ đặt lịch đến nhận báo cáo — toàn bộ quy trình hoàn thành trong 24–48 giờ</p>
+    </div>
+
+    <div class="process-tabs">
+      <!-- Tab bar -->
+      <div class="process-tab-bar">
+        <button class="process-tab-btn active" data-step="pstep-1">
+          <span class="ptb-num">01</span>
+          <span class="ptb-label">Đặt lịch &amp; nhận thiết bị</span>
+        </button>
+        <button class="process-tab-btn" data-step="pstep-2">
+          <span class="ptb-num">02</span>
+          <span class="ptb-label">Theo dõi SpO₂ qua đêm</span>
+        </button>
+        <button class="process-tab-btn" data-step="pstep-3">
+          <span class="ptb-num">03</span>
+          <span class="ptb-label">Nhận báo cáo &amp; tư vấn</span>
+        </button>
+      </div>
+
+      <!-- Step panels -->
+      <div class="process-step-panel active" id="pstep-1">
+        <div class="psp-content">
+          <h3>Đặt lịch &amp; nhận thiết bị tận nơi</h3>
+          <p>Phòng khám đăng ký dịch vụ và chỉ định bệnh nhân. BioSenses liên hệ xác nhận lịch và giao thiết bị đo SpO₂ đến tận nhà bệnh nhân trong vòng 24 giờ.</p>
+          <ul class="psp-list">
+            <li>Phòng khám đăng ký qua form hoặc hotline BioSenses</li>
+            <li>Hệ thống tự động tạo hồ sơ bệnh nhân trên nền tảng iParamed</li>
+            <li>Nhân viên BioSenses giao thiết bị và hướng dẫn sử dụng tại nhà (5 phút)</li>
+            <li>Thiết bị được cài đặt và kiểm tra sẵn sàng trước khi bàn giao</li>
+          </ul>
+        </div>
+        <div class="psp-visual">
+          <img src="assets/images/photoshoot-device-hand.png" alt="Giao thiết bị tận nơi">
+        </div>
+      </div>
+
+      <div class="process-step-panel" id="pstep-2">
+        <div class="psp-content">
+          <h3>Đeo thiết bị &amp; theo dõi SpO₂ qua đêm</h3>
+          <p>Bệnh nhân đeo thiết bị đo SpO₂ nhỏ gọn trên ngón tay trong khi ngủ. Dữ liệu được ghi lại tự động và đồng bộ lên nền tảng iParamed ngay khi hoàn thành.</p>
+          <ul class="psp-list">
+            <li>Thiết bị nhỏ gọn, không gây khó chịu khi ngủ</li>
+            <li>Ghi liên tục SpO₂ &amp; nhịp tim theo từng giây trong 8–10 giờ</li>
+            <li>Dữ liệu tự động đồng bộ qua Bluetooth/Wi-Fi sau khi thức dậy</li>
+            <li>Bệnh nhân không cần thao tác gì thêm sau khi đeo thiết bị</li>
+          </ul>
+        </div>
+        <div class="psp-visual">
+          <img src="assets/images/device-spo2.jpg" alt="Đeo thiết bị theo dõi SpO₂">
+        </div>
+      </div>
+
+      <div class="process-step-panel" id="pstep-3">
+        <div class="psp-content">
+          <h3>Nhận báo cáo &amp; tư vấn chuyên môn</h3>
+          <p>Trong vòng 24 giờ, bác sĩ hô hấp &amp; y học giấc ngủ của BioSenses phân tích dữ liệu và gửi báo cáo chi tiết đến phòng khám và bệnh nhân. Bác sĩ tư vấn và đề xuất bước can thiệp phù hợp.</p>
+          <ul class="psp-list">
+            <li>AI tự động tính toán ODI và phân loại mức độ nguy cơ</li>
+            <li>Bác sĩ chuyên môn thẩm định &amp; bổ sung nhận xét lâm sàng</li>
+            <li>Báo cáo số hoá gửi về phòng khám &amp; bệnh nhân qua ứng dụng</li>
+            <li>Khuyến nghị bước tiếp theo: theo dõi thêm hoặc chuyển PSG nếu cần</li>
+          </ul>
+        </div>
+        <div class="psp-visual">
+          <img src="assets/images/report-osa-1.jpg" alt="Báo cáo lâm sàng OSA">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SO SÁNH
+═══════════════════════════════════════════════ -->
 <section class="section bg-white">
   <div class="container">
     <div class="section-header centered">
@@ -218,8 +388,8 @@
         <tbody>
           <tr>
             <td class="col-label">Chi phí</td>
-            <td class="col-biosenses"><span class="check-icon">✓</span> Chi phí thấp, mô hình thuê thiết bị linh hoạt</td>
-            <td>Chi phí cao, cần đầu tư thiết bị PSG đắt tiền</td>
+            <td class="col-biosenses"><span class="check-icon">✓</span> Thấp, mô hình thuê thiết bị linh hoạt</td>
+            <td>Cao, cần đầu tư thiết bị PSG đắt tiền</td>
           </tr>
           <tr>
             <td class="col-label">Địa điểm thực hiện</td>
@@ -238,7 +408,7 @@
           </tr>
           <tr>
             <td class="col-label">Báo cáo</td>
-            <td class="col-biosenses"><span class="check-icon">✓</span> Báo cáo số hoá, chia sẻ dễ dàng</td>
+            <td class="col-biosenses"><span class="check-icon">✓</span> Số hoá, chia sẻ dễ dàng, trong 24h</td>
             <td>Báo cáo giấy, lưu trữ phức tạp</td>
           </tr>
           <tr>
@@ -252,161 +422,110 @@
   </div>
 </section>
 
-<!-- REPORT SECTION -->
-<section class="section bg-light">
-  <div class="container">
-    <div class="report-grid">
-      <div class="report-image-placeholder">
-        <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(20,184,212,0.5)" stroke-width="1" stroke-linecap="round">
-          <rect x="3" y="3" width="18" height="18" rx="2"/>
-          <path d="M3 9h18M9 21V9"/>
-          <path d="M6 6h.01M12 12h6M12 15h4M12 18h2"/>
-        </svg>
-      </div>
-      <div class="report-content">
-        <div class="section-label">Báo cáo</div>
-        <h2>Báo cáo lâm sàng chi tiết, hỗ trợ bác sĩ ra quyết định</h2>
-        <p>Sau mỗi đêm theo dõi, hệ thống tự động tạo báo cáo số hoá với đầy đủ biểu đồ SpO₂ theo thời gian, chỉ số ODI, và đánh giá mức độ nguy cơ. Bác sĩ chuyên môn thẩm định và bổ sung nhận xét lâm sàng trước khi gửi đến bệnh nhân và phòng khám.</p>
-        <ul class="feature-list">
-          <li>Biểu đồ SpO₂ liên tục theo từng phút trong đêm</li>
-          <li>Chỉ số ODI (Oxygen Desaturation Index) được tính tự động</li>
-          <li>Phân loại mức độ nguy cơ: nhẹ / trung bình / nặng</li>
-          <li>Nhận xét lâm sàng từ bác sĩ chuyên môn hô hấp &amp; giấc ngủ</li>
-          <li>Khuyến nghị bước tiếp theo: theo dõi thêm hoặc chuyển PSG</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 3-STEP PROCESS -->
-<section class="section bg-white">
-  <div class="container">
-    <div class="section-header centered">
-      <div class="section-label">Quy trình</div>
-      <h2>Quy trình tầm soát đơn giản và linh hoạt</h2>
-    </div>
-    <div class="steps-vertical" style="max-width:600px;margin-inline:auto;">
-      <div class="step-v fade-up">
-        <div class="step-v-left">
-          <div class="step-v-num">1</div>
-          <div class="step-v-line"></div>
-        </div>
-        <div class="step-v-content">
-          <h4>Đặt lịch &amp; nhận thiết bị</h4>
-          <p>Phòng khám đăng ký dịch vụ và chỉ định bệnh nhân. BioSenses giao thiết bị đo SpO₂ tận nhà bệnh nhân và hướng dẫn sử dụng đơn giản trong vòng 5 phút.</p>
-        </div>
-      </div>
-      <div class="step-v fade-up">
-        <div class="step-v-left">
-          <div class="step-v-num">2</div>
-          <div class="step-v-line"></div>
-        </div>
-        <div class="step-v-content">
-          <h4>Đeo thiết bị và theo dõi qua đêm</h4>
-          <p>Bệnh nhân đeo thiết bị đo SpO₂ trên ngón tay trong khi ngủ. Dữ liệu được ghi lại tự động và đồng bộ lên nền tảng iParamed ngay sau khi hoàn thành.</p>
-        </div>
-      </div>
-      <div class="step-v fade-up">
-        <div class="step-v-left">
-          <div class="step-v-num">3</div>
-        </div>
-        <div class="step-v-content">
-          <h4>Nhận báo cáo &amp; tư vấn chuyên môn</h4>
-          <p>Trong vòng 24h, bác sĩ chuyên môn của BioSenses phân tích dữ liệu và gửi báo cáo đến phòng khám và bệnh nhân. Bác sĩ tư vấn và đề xuất bước can thiệp phù hợp nếu cần.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA FORM -->
+<!-- ═══════════════════════════════════════════════
+     CTA FORM — same as homepage
+═══════════════════════════════════════════════ -->
 <section class="section cta-section" id="contact-form">
   <div class="container">
     <div class="cta-grid">
       <div class="cta-left">
-        <div class="section-label" style="color:var(--color-accent)">Triển khai ngay</div>
-        <h2>Đồng hành cùng cơ sở y tế trong triển khai tầm soát từ xa</h2>
-        <p>Liên hệ đội ngũ BioSenses để được tư vấn về giải pháp BIO SLEEPCARE™ phù hợp với nhu cầu của phòng khám và bệnh viện của bạn.</p>
+        <div class="section-label" style="color:var(--color-accent)">Bắt đầu ngay hôm nay</div>
+        <h2>Đồng hành cùng cơ sở y tế<br>trong <span class="hl">triển khai tầm soát</span> từ xa</h2>
+        <p>Chúng tôi cung cấp giải pháp trọn gói — từ thiết bị, phần mềm đến hỗ trợ chuyên môn — giúp phòng khám và bệnh viện triển khai dịch vụ theo dõi sức khoẻ từ xa nhanh chóng, hiệu quả và không rủi ro tài chính.</p>
       </div>
-      <form class="cta-form" novalidate>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Họ tên <span style="color:#00BBA7">*</span></label>
-            <input type="text" placeholder="Nguyễn Văn A" required />
+      <div class="cta-form-wrapper">
+        <form class="cta-form" id="sleepcare-cta-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-name">Họ tên <span style="color:var(--color-accent)">*</span></label>
+              <input type="text" id="f-name" name="name" placeholder="Nguyễn Văn A" required />
+            </div>
+            <div class="form-group">
+              <label for="f-org">Đơn vị công tác <span style="color:var(--color-accent)">*</span></label>
+              <input type="text" id="f-org" name="org" placeholder="Bệnh viện / Phòng khám" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-title">Chức danh / Chuyên khoa <span style="color:var(--color-accent)">*</span></label>
+              <input type="text" id="f-title" name="title" placeholder="Bác sĩ Hô hấp" required />
+            </div>
+            <div class="form-group">
+              <label for="f-phone">Số điện thoại <span style="color:var(--color-accent)">*</span></label>
+              <input type="tel" id="f-phone" name="phone" placeholder="0901 234 567" required />
+            </div>
           </div>
           <div class="form-group">
-            <label>Đơn vị công tác <span style="color:#00BBA7">*</span></label>
-            <input type="text" placeholder="Bệnh viện / Phòng khám" required />
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Chức danh / Chuyên khoa <span style="color:#00BBA7">*</span></label>
-            <input type="text" placeholder="Bác sĩ Hô hấp" required />
+            <label for="f-email">Email</label>
+            <input type="email" id="f-email" name="email" placeholder="bac.si@benhvien.vn" />
           </div>
           <div class="form-group">
-            <label>Số điện thoại <span style="color:#00BBA7">*</span></label>
-            <input type="tel" placeholder="0901 234 567" required />
+            <label for="f-solution">Giải pháp quan tâm <span style="color:var(--color-accent)">*</span></label>
+            <select id="f-solution" name="solution" required>
+              <option value="">-- Chọn giải pháp --</option>
+              <option value="sleepcare" selected>BIO SLEEPCARE™</option>
+              <option value="rhythm">BIO RHYTHM™</option>
+              <option value="cardicare">BIO CARDICARE™</option>
+              <option value="telecare">BIO TELECARE™</option>
+              <option value="research">BIO RESEARCH™</option>
+            </select>
           </div>
-        </div>
-        <div class="form-group">
-          <label>Email</label>
-          <input type="email" placeholder="bac.si@benhvien.vn" />
-        </div>
-        <div class="form-group">
-          <label>Giải pháp quan tâm <span style="color:#00BBA7">*</span></label>
-          <select required>
-            <option value="">-- Chọn giải pháp --</option>
-            <option value="sleepcare" selected>BIO SLEEPCARE™</option>
-            <option value="rhythm">BIO RHYTHM™</option>
-            <option value="cardicare">BIO CARDICARE™</option>
-            <option value="telecare">BIO TELECARE™</option>
-            <option value="research">BIO RESEARCH™</option>
-          </select>
-        </div>
-        <button type="submit" class="btn btn-primary" style="width:100%;margin-top:8px;justify-content:center;padding:14px;">GỬI YÊU CẦU TƯ VẤN</button>
-        <p class="form-note">Cam kết bảo mật thông tin. BioSenses sẽ liên hệ trong 24h làm việc.</p>
-      </form>
+          <div class="form-group form-consent">
+            <label class="consent-label">
+              <input type="checkbox" id="f-consent" name="consent" required />
+              <span>Tôi đồng ý cho BioSenses lưu trữ và sử dụng thông tin cá nhân để liên hệ tư vấn theo <a href="policy.html#policy-privacy" target="_blank" style="color:var(--color-accent)">Chính sách bảo mật</a></span>
+            </label>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;margin-top:8px;justify-content:center;padding:14px;">GỬI YÊU CẦU TƯ VẤN</button>
+          <p class="form-note">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Cam kết bảo mật thông tin. BioSenses sẽ liên hệ trong 24h làm việc.
+          </p>
+        </form>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- NEWS -->
+<!-- ═══════════════════════════════════════════════
+     NEWS — 2 cards (same as homepage)
+═══════════════════════════════════════════════ -->
 <section class="section bg-white">
   <div class="container">
     <div class="news-header">
       <h2>Tin tức &amp; Sự kiện</h2>
       <a href="news.html" class="btn btn-outline btn-sm">Xem tất cả →</a>
     </div>
-    <div class="news-grid">
+    <div class="news-grid news-grid-2">
       <article class="news-card fade-up">
-        <div class="news-card-image">
-          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </div>
-        <div class="news-card-body">
-          <span class="news-tag">Giải pháp</span>
-          <h3>BIO SLEEPCARE™ — Giải pháp tầm soát OSA mới tại Việt Nam</h3>
-          <p>BioSenses ra mắt giải pháp tầm soát ngưng thở khi ngủ bằng phương pháp đo SpO₂ không xâm lấn, phù hợp triển khai tại phòng khám và tại nhà.</p>
-          <span class="news-date">05/05/2026</span>
-        </div>
+        <a href="https://www.oucru.org/vi/project/cac-nen-tang-giam-sat-tu-xa-gia-ca-phai-chang-va-co-kha-nang-mo-rong-de-xac-dinh-dac-diem-cua-benh-va-quan-ly-benh-nhan-trong-dai-dich-va-cac-benh-nhiem-trung-he-qua-cao/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit;display:contents;">
+          <div class="news-card-image"><img src="assets/images/pr-oucru-research.png" alt="OUCRU Research" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="news-card-body">
+            <span class="news-tag">Tin nổi bật</span>
+            <h3>OUCRU | Nền tảng giám sát từ xa và khả năng mở rộng để xác định đặc điểm của bệnh và quản lý bệnh nhân</h3>
+            <p>Dự án hợp tác giữa iParamed, Đơn vị nghiên cứu lâm sàng Đại học Oxford (OUCRU) và Bệnh viện Bệnh nhiệt đới trong Đại dịch Covid-19</p>
+            <span class="news-read-more">Đọc thêm →</span>
+          </div>
+        </a>
       </article>
       <article class="news-card fade-up">
-        <div class="news-card-image">
-          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-        </div>
-        <div class="news-card-body">
-          <span class="news-tag">Nghiên cứu</span>
-          <h3>Hội Hô hấp Việt Nam khuyến cáo tầm soát OSA cho bệnh nhân tim mạch</h3>
-          <p>Hội nghị Hô hấp Quốc gia 2026 nhấn mạnh tầm quan trọng của việc tầm soát OSA sớm trong bệnh nhân có nguy cơ tim mạch cao.</p>
-          <span class="news-date">20/04/2026</span>
-        </div>
+        <a href="https://www.vietnamplus.vn/ung-dung-cong-nghe-cap-nhat-tu-xa-chi-so-suc-khoe-benh-nhan-covid-19-post/37744.vnp" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit;display:contents;">
+          <div class="news-card-image"><img src="assets/images/pr-vnexpress.png" alt="Vietnam Plus" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="news-card-body">
+            <span class="news-tag">Tin nổi bật</span>
+            <h3>Vietnam Plus | Ứng dụng công nghệ cập nhật từ xa chỉ số sức khỏe bệnh nhân COVID-19</h3>
+            <p>Nếu tình trạng bệnh nhân diễn biến xấu, tín hiệu báo động sẽ được chuyển đến trung tâm ngay lập tức để bác sĩ kịp thời can thiệp.</p>
+            <span class="news-read-more">Đọc thêm →</span>
+          </div>
+        </a>
       </article>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ═══════════════════════════════════════════════
+     FOOTER — same as homepage
+═══════════════════════════════════════════════ -->
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
@@ -435,7 +554,7 @@
       </div>
       <div class="footer-col">
         <h4>Giải pháp</h4>
-        <nav class="footer-links">
+        <nav class="footer-links" aria-label="Solutions">
           <a href="bio-sleepcare.html">BIO SLEEPCARE™</a>
           <a href="bio-rhythm.html">BIO RHYTHM™</a>
           <a href="#">BIO CARDICARE™</a>
@@ -445,7 +564,7 @@
       </div>
       <div class="footer-col">
         <h4>Công ty</h4>
-        <nav class="footer-links">
+        <nav class="footer-links" aria-label="Company">
           <a href="about.html">Về chúng tôi</a>
           <a href="news.html">Tin tức &amp; Sự kiện</a>
           <a href="advisory.html">Đội ngũ chuyên gia</a>
@@ -454,7 +573,7 @@
       </div>
       <div class="footer-col">
         <h4>Pháp lý</h4>
-        <nav class="footer-links">
+        <nav class="footer-links" aria-label="Legal">
           <a href="policy.html#policy-privacy">Chính sách bảo mật</a>
           <a href="policy.html#policy-return">Chính sách cung cấp, đổi huỷ &amp; hoàn phí</a>
           <a href="policy.html#policy-payment">Chính sách thanh toán &amp; Điều kiện giao dịch</a>

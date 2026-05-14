@@ -376,6 +376,28 @@
     });
   })();
 
+  /* ── 11. Process step tabs ── */
+  (function initProcessTabs() {
+    const bars = document.querySelectorAll('.process-tab-bar');
+    bars.forEach((bar) => {
+      const container = bar.closest('.process-tabs');
+      if (!container) return;
+      const btns = bar.querySelectorAll('.process-tab-btn');
+      const panels = container.querySelectorAll('.process-step-panel');
+
+      btns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          btns.forEach((b) => b.classList.remove('active'));
+          btn.classList.add('active');
+          const target = btn.dataset.step;
+          panels.forEach((p) => {
+            p.classList.toggle('active', p.id === target);
+          });
+        });
+      });
+    });
+  })();
+
   /* ── Active nav link detection ── */
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-link[href]').forEach((link) => {

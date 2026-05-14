@@ -47,196 +47,255 @@
       <li class="nav-item"><a href="news.html" class="nav-link">Tin tức &amp; Sự kiện</a></li>
       <li class="nav-item"><a href="#" class="nav-link">Thư viện Y khoa</a></li>
     </ul>
-    <div class="nav-cta"><a href="contact.html" class="btn btn-primary btn-sm">Kết nối cùng chúng tôi</a></div>
-    <button class="hamburger" aria-label="Mở menu"><span></span><span></span><span></span></button>
+    <div class="nav-cta">
+      <a href="#contact-form" class="btn btn-primary btn-sm">Kết nối cùng chúng tôi</a>
+    </div>
+    <button class="hamburger" aria-label="Mở menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero-solution" aria-label="BIO TELECARE Hero">
-  <div class="container">
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="index.html">Trang chủ</a>
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-      <span>Giải pháp</span>
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-      <span>BIO TELECARE™</span>
-    </nav>
-    <div class="solution-badge">BIO TELECARE™</div>
-    <h1>Theo Dõi Sức Khoẻ<br><span class="hl">Từ Xa</span></h1>
-    <p>Chương trình <strong style="color:rgba(255,255,255,.9)">Tele-Monitoring toàn diện</strong> — kết hợp thiết bị y tế đa chỉ số, nền tảng dữ liệu tập trung và đội ngũ bác sĩ thẩm định — giúp cơ sở y tế mở rộng khả năng chăm sóc bệnh nhân ra ngoài bệnh viện một cách <strong style="color:rgba(255,255,255,.9)">hiệu quả và an toàn</strong>.</p>
-    <div class="hero-btns">
-      <a href="#contact-form" class="btn btn-primary btn-lg">Tư vấn triển khai</a>
-      <a href="#solution" class="btn btn-outline-white btn-lg">Tìm hiểu giải pháp</a>
-    </div>
-    <div style="margin-top:40px;">
-      <img src="assets/images/device-all.jpg" alt="All Devices" style="max-height:200px;width:auto;border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,0.3);">
-    </div>
+<!-- HERO — full-screen image -->
+<section class="hero hero-fullscreen" aria-label="BIO TELECARE Hero">
+  <div class="hero-fullscreen-bg">
+    <img src="assets/images/device-all.jpg" alt="" aria-hidden="true">
   </div>
-</section>
-
-<!-- KEY STATS -->
-<section class="section bg-white section--sm">
   <div class="container">
-    <div class="section-header centered">
-      <div class="section-label">Thực tiễn</div>
-      <h2>Được kiểm chứng qua triển khai thực tế tại Bệnh viện Nhiệt Đới TP.HCM</h2>
-      <p>Nền tảng iParamed đã được triển khai và kiểm chứng trong môi trường lâm sàng thực tế, đạt kết quả ấn tượng về chất lượng dữ liệu và khả năng vận hành</p>
-    </div>
-    <div class="stats-grid">
-      <div class="stat-block fade-up">
-        <span class="stat-block-value">30.000+</span>
-        <span class="stat-block-label">giờ dữ liệu sinh hiệu được thu thập và phân tích</span>
+    <div class="hero-text-panel">
+      <nav class="breadcrumb" aria-label="Breadcrumb" style="margin-bottom:20px;">
+        <a href="index.html" style="color:rgba(11,37,69,.45);">Trang chủ</a>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(11,37,69,.3)" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        <span style="color:rgba(11,37,69,.45);">Giải pháp</span>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(11,37,69,.3)" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        <span style="color:var(--color-primary);">BIO TELECARE™</span>
+      </nav>
+      <div class="hero-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        BIO TELECARE™
       </div>
-      <div class="stat-block fade-up">
-        <span class="stat-block-value">2.000+</span>
-        <span class="stat-block-label">lượt theo dõi bệnh nhân thành công</span>
-      </div>
-      <div class="stat-block fade-up">
-        <span class="stat-block-value">100%</span>
-        <span class="stat-block-label">thiết bị đạt chuẩn y tế FDA, CE, Bộ Y Tế</span>
-      </div>
-      <div class="stat-block fade-up">
-        <span class="stat-block-value">24h</span>
-        <span class="stat-block-label">thời gian trung bình từ kết thúc ca đến nhận báo cáo</span>
+      <h1>Theo Dõi Sức Khoẻ <span class="hl">Từ Xa</span> Toàn Diện</h1>
+      <p>Chương trình <strong>Tele-Monitoring toàn diện</strong> — kết hợp thiết bị y tế đa chỉ số, nền tảng dữ liệu tập trung và đội ngũ bác sĩ thẩm định — giúp cơ sở y tế mở rộng khả năng chăm sóc bệnh nhân ra ngoài bệnh viện một cách <strong>hiệu quả và an toàn</strong>.</p>
+      <div class="hero-btns">
+        <a href="#contact-form" class="btn btn-primary btn-lg">Liên hệ ngay →</a>
+        <a href="#solution" class="btn btn-outline btn-lg">Tìm hiểu giải pháp</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROBLEM -->
-<section class="section bg-light">
+<!-- PROOF — line separators, moved up right after hero -->
+<div class="proof-strip">
   <div class="container">
-    <div class="section-header centered">
-      <div class="section-label">Vấn đề</div>
-      <h2>Hệ thống y tế đang đối mặt với<br>áp lực <span class="hl">bệnh mạn tính</span> và <span class="hl">dân số già hoá</span></h2>
-      <p>Sự gia tăng nhanh chóng của bệnh không lây nhiễm và tốc độ già hoá dân số tạo ra áp lực lớn lên hệ thống y tế Việt Nam. Bệnh nhân mạn tính cần được theo dõi liên tục nhưng không thể đến bệnh viện thường xuyên. Các cơ sở y tế thiếu công cụ để chăm sóc bệnh nhân ngoại trú hiệu quả.</p>
+    <div class="proof-strip-inner">
+      <div class="proof-strip-item">
+        <div class="proof-strip-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <div class="proof-strip-text">
+          <h4>30.000+ giờ dữ liệu</h4>
+          <p>Giờ sinh hiệu được thu thập và phân tích thực tế tại Bệnh viện Nhiệt Đới TP.HCM</p>
+        </div>
+      </div>
+      <div class="proof-strip-sep"></div>
+      <div class="proof-strip-item">
+        <div class="proof-strip-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="proof-strip-text">
+          <h4>2.000+ bệnh nhân</h4>
+          <p>Lượt theo dõi bệnh nhân thành công trong các chương trình Tele-Monitoring</p>
+        </div>
+      </div>
+      <div class="proof-strip-sep"></div>
+      <div class="proof-strip-item">
+        <div class="proof-strip-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="proof-strip-text">
+          <h4>Thiết bị đạt chuẩn quốc tế</h4>
+          <p>100% thiết bị đạt chuẩn FDA, CE, được Bộ Y Tế Việt Nam công nhận</p>
+        </div>
+      </div>
+      <div class="proof-strip-sep"></div>
+      <div class="proof-strip-item">
+        <div class="proof-strip-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="proof-strip-text">
+          <h4>Kết quả trong 24 giờ</h4>
+          <p>Thời gian trung bình từ kết thúc ca đến nhận báo cáo chuyên môn</p>
+        </div>
+      </div>
     </div>
-    <div class="stats-grid">
-      <div class="stat-block fade-up">
-        <span class="stat-block-value">Top 10</span>
-        <span class="stat-block-label">Việt Nam thuộc Top 10 quốc gia có tốc độ già hoá dân số nhanh nhất châu Á</span>
+  </div>
+</div>
+
+<!-- BỐI CẢNH — full-screen bg, 1/2 text + 1/2 cards -->
+<section class="section boicanh-section" id="boicanh">
+  <div class="boicanh-bg">
+    <img src="assets/images/iomt-system.png" alt="" aria-hidden="true">
+  </div>
+  <div class="container">
+    <div class="boicanh-grid">
+      <div class="boicanh-text">
+        <div class="section-label">Bối cảnh</div>
+        <h2>Hệ thống y tế đối mặt với áp lực <span class="hl">bệnh mạn tính</span> và <em style="font-style:normal;color:rgba(255,255,255,.55);">dân số già hoá</em></h2>
+        <p>Sự gia tăng nhanh chóng của bệnh không lây nhiễm và tốc độ già hoá dân số tạo ra áp lực lớn lên hệ thống y tế Việt Nam. Bệnh nhân mạn tính cần được theo dõi liên tục nhưng không thể đến bệnh viện thường xuyên.</p>
+        <p style="margin-top:14px;">Các cơ sở y tế thiếu công cụ để chăm sóc bệnh nhân ngoại trú hiệu quả. BIO TELECARE™ lấp đầy khoảng trống này với nền tảng Tele-Monitoring toàn diện.</p>
       </div>
-      <div class="stat-block fade-up">
-        <span class="stat-block-value">3–4</span>
-        <span class="stat-block-label">số bệnh mạn tính trung bình ở người cao tuổi — cần theo dõi đa chỉ số</span>
-      </div>
-      <div class="stat-block fade-up">
-        <span class="stat-block-value">7–10×</span>
-        <span class="stat-block-label">chi phí điều trị biến chứng cao hơn so với chi phí theo dõi và phòng ngừa sớm</span>
-      </div>
-      <div class="stat-block fade-up">
-        <span class="stat-block-value">60%</span>
-        <span class="stat-block-label">bệnh nhân mạn tính không được theo dõi đầy đủ giữa các lần tái khám</span>
+      <div class="boicanh-cards">
+        <div class="boicanh-card fade-up">
+          <div class="boicanh-card-num">Top 10</div>
+          <div class="boicanh-card-text">
+            <h4>Tốc độ già hoá dân số</h4>
+            <p>Việt Nam thuộc Top 10 quốc gia có tốc độ già hoá dân số nhanh nhất châu Á</p>
+          </div>
+        </div>
+        <div class="boicanh-card fade-up">
+          <div class="boicanh-card-num">3–4</div>
+          <div class="boicanh-card-text">
+            <h4>Bệnh mạn tính đồng thời</h4>
+            <p>Số bệnh mạn tính trung bình ở người cao tuổi — cần theo dõi đa chỉ số song song</p>
+          </div>
+        </div>
+        <div class="boicanh-card fade-up">
+          <div class="boicanh-card-num">7–10×</div>
+          <div class="boicanh-card-text">
+            <h4>Chi phí biến chứng</h4>
+            <p>Chi phí điều trị biến chứng cao hơn 7–10 lần so với chi phí theo dõi và phòng ngừa sớm</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SOLUTION -->
+<!-- SOLUTION — full-screen system image, no frame -->
 <section class="section bg-white" id="solution">
   <div class="container">
     <div class="section-header centered">
       <div class="section-label">Giải pháp</div>
-      <h2>Nền tảng Tele-Monitoring toàn diện cho bệnh nhân mạn tính</h2>
+      <h2>Nền tảng Tele-Monitoring <span class="hl">toàn diện</span> cho bệnh nhân mạn tính</h2>
       <p>BIO TELECARE™ tích hợp đa thiết bị y tế trên một nền tảng dữ liệu thống nhất, cho phép bác sĩ theo dõi nhiều bệnh nhân đồng thời từ xa với đầy đủ thông tin lâm sàng</p>
-      <img src="assets/images/iparamed-system.png" alt="iParamed System" style="width:100%;border-radius:20px;margin-top:24px;box-shadow:0 8px 28px rgba(0,0,0,0.1);">
     </div>
-    <div class="product-grid">
-      <div class="product-card fade-up">
-        <div class="card-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-        </div>
-        <h3>ECG Holter, SpO₂ &amp; Huyết áp</h3>
-        <p>Theo dõi đồng thời nhiều chỉ số sinh hiệu quan trọng — điện tim, nồng độ oxy máu và huyết áp — thông qua các thiết bị y tế đạt chuẩn quốc tế.</p>
-      </div>
-      <div class="product-card fade-up">
-        <div class="card-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
-        </div>
-        <h3>Đồng bộ dữ liệu tập trung</h3>
-        <p>Toàn bộ dữ liệu từ các thiết bị được đồng bộ tự động lên nền tảng iParamed theo thời gian thực. Bác sĩ truy cập dashboard tập trung để theo dõi tất cả bệnh nhân.</p>
-      </div>
-      <div class="product-card fade-up">
-        <div class="card-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
-        </div>
-        <h3>Hỗ trợ đọc kết quả</h3>
-        <p>Đội ngũ bác sĩ chuyên môn của BioSenses thẩm định dữ liệu và xuất báo cáo lâm sàng, hỗ trợ bác sĩ điều trị ra quyết định phù hợp cho từng bệnh nhân.</p>
-      </div>
-    </div>
+    <img src="assets/images/iparamed-system.png" alt="Nền tảng iParamed Tele-Monitoring" style="width:100%;border-radius:var(--radius-xl);margin-top:40px;box-shadow:var(--shadow-xl);">
   </div>
 </section>
 
-<!-- DEPLOYMENT -->
+<!-- GIÁ TRỊ MANG LẠI — tách riêng thành section riêng -->
 <section class="section bg-light">
   <div class="container">
     <div class="section-header centered">
-      <div class="section-label">Triển khai</div>
-      <h2>Linh hoạt trong triển khai — Tối ưu cho mọi quy mô cơ sở y tế</h2>
-      <p>BIO TELECARE™ được thiết kế để phù hợp với đa dạng quy mô và loại hình cơ sở y tế — từ phòng khám tư nhân đến bệnh viện đa khoa</p>
+      <div class="section-label">Lợi ích</div>
+      <h2>Giá trị mang lại cho <span class="hl">Phòng khám &amp; Bệnh viện</span></h2>
+      <p>BIO TELECARE™ giúp cơ sở y tế mở rộng khả năng chăm sóc bệnh nhân mà không cần đầu tư hạ tầng lớn</p>
     </div>
-    <div class="product-grid">
-      <div class="product-card fade-up">
-        <div class="card-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+    <div class="solution-cards-grid" style="margin-top:56px;">
+      <div class="solution-feature-card fade-up">
+        <div class="sfc-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
         </div>
-        <h3>Linh hoạt thiết bị &amp; phần mềm</h3>
-        <p>Tích hợp nhiều loại thiết bị y tế trên một nền tảng phần mềm thống nhất. Dễ dàng thêm hoặc bỏ thiết bị theo nhu cầu mà không cần thay đổi hệ thống.</p>
+        <h3>Theo dõi đa chỉ số tập trung</h3>
+        <p>ECG Holter, SpO₂ và huyết áp — tất cả thiết bị đồng bộ tự động lên một dashboard tập trung. Bác sĩ theo dõi toàn bộ bệnh nhân trong thời gian thực từ bất kỳ đâu.</p>
+        <div style="margin-top:20px;border-radius:var(--radius-lg);overflow:hidden;">
+          <img src="assets/images/portal-dashboard.jpg" alt="Dashboard theo dõi bệnh nhân" style="width:100%;display:block;">
+        </div>
       </div>
-      <div class="product-card fade-up">
-        <div class="card-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <div class="solution-feature-card fade-up">
+        <div class="sfc-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
         </div>
-        <h3>Hỗ trợ tích hợp API/SDK</h3>
-        <p>Kết nối nền tảng iParamed với hệ thống HIS/EMR hiện có của cơ sở y tế thông qua API chuẩn HL7 FHIR. Không gián đoạn quy trình làm việc hiện tại.</p>
+        <h3>Ứng dụng bệnh nhân thân thiện</h3>
+        <p>Bệnh nhân theo dõi dữ liệu sức khoẻ của mình qua ứng dụng mobile trực quan, ghi chú triệu chứng và nhận thông báo từ bác sĩ một cách dễ dàng.</p>
+        <div style="margin-top:20px;border-radius:var(--radius-lg);overflow:hidden;">
+          <img src="assets/images/app-patient-home.png" alt="Ứng dụng bệnh nhân iParamed" style="width:100%;display:block;">
+        </div>
       </div>
-      <div class="product-card fade-up">
-        <div class="card-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+      <div class="solution-feature-card fade-up">
+        <div class="sfc-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
-        <h3>Hỗ trợ vận hành đầy đủ</h3>
-        <p>BioSenses đảm nhiệm toàn bộ khâu logistics — giao nhận thiết bị, bảo trì kỹ thuật và chăm sóc khách hàng — để cơ sở y tế tập trung vào chuyên môn.</p>
+        <h3>Bác sĩ chuyên môn thẩm định</h3>
+        <p>Đội ngũ bác sĩ của BioSenses thẩm định dữ liệu và xuất báo cáo lâm sàng chuẩn, hỗ trợ bác sĩ điều trị ra quyết định phù hợp cho từng bệnh nhân trong vòng 24 giờ.</p>
+        <div style="margin-top:20px;border-radius:var(--radius-lg);overflow:hidden;">
+          <img src="assets/images/portal-ecg.png" alt="Phân tích ECG trên nền tảng" style="width:100%;display:block;">
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 3-STEP PROCESS -->
+<!-- QUY TRÌNH — horizontal tab bar, 3 steps -->
 <section class="section bg-white">
   <div class="container">
     <div class="section-header centered">
       <div class="section-label">Quy trình</div>
-      <h2>Quy trình triển khai nhanh chóng — Sẵn sàng trong 48h</h2>
+      <h2>Quy trình triển khai nhanh chóng<br><span class="hl">Sẵn sàng trong 48 giờ</span></h2>
+      <p>Từ khảo sát đến bắt đầu theo dõi bệnh nhân đầu tiên — toàn bộ quy trình trong 48 giờ</p>
     </div>
-    <div class="steps-vertical" style="max-width:600px;margin-inline:auto;">
-      <div class="step-v fade-up">
-        <div class="step-v-left">
-          <div class="step-v-num">1</div>
-          <div class="step-v-line"></div>
-        </div>
-        <div class="step-v-content">
-          <h4>Khảo sát &amp; thiết lập chương trình</h4>
+
+    <div class="process-tabs">
+      <div class="process-tab-bar">
+        <button class="process-tab-btn active" data-step="tc-step-1">
+          <span class="ptb-num">01</span>
+          <span class="ptb-label">Khảo sát &amp; thiết lập</span>
+        </button>
+        <button class="process-tab-btn" data-step="tc-step-2">
+          <span class="ptb-num">02</span>
+          <span class="ptb-label">Chỉ định &amp; giao thiết bị</span>
+        </button>
+        <button class="process-tab-btn" data-step="tc-step-3">
+          <span class="ptb-num">03</span>
+          <span class="ptb-label">Theo dõi &amp; nhận báo cáo</span>
+        </button>
+      </div>
+
+      <div class="process-step-panel active" id="tc-step-1">
+        <div class="psp-content">
+          <h3>Khảo sát nhu cầu &amp; thiết lập hệ thống</h3>
           <p>Đội ngũ BioSenses phối hợp với cơ sở y tế để xác định nhu cầu, lựa chọn gói thiết bị phù hợp và thiết lập tài khoản trên nền tảng iParamed. Đào tạo nhân viên sử dụng hệ thống trong 2–4 giờ.</p>
+          <ul class="psp-list">
+            <li>Tư vấn và lựa chọn gói thiết bị phù hợp với nhu cầu cơ sở y tế</li>
+            <li>Thiết lập tài khoản và cấu hình nền tảng iParamed trong vòng 24h</li>
+            <li>Đào tạo bác sĩ và nhân viên y tế sử dụng hệ thống (2–4 giờ)</li>
+            <li>Tích hợp với hệ thống HIS/EMR hiện tại qua API HL7 FHIR nếu cần</li>
+          </ul>
+        </div>
+        <div class="psp-visual">
+          <img src="assets/images/photoshoot-consultation.png" alt="Tư vấn và thiết lập hệ thống">
         </div>
       </div>
-      <div class="step-v fade-up">
-        <div class="step-v-left">
-          <div class="step-v-num">2</div>
-          <div class="step-v-line"></div>
-        </div>
-        <div class="step-v-content">
-          <h4>Chỉ định bệnh nhân &amp; giao thiết bị</h4>
+
+      <div class="process-step-panel" id="tc-step-2">
+        <div class="psp-content">
+          <h3>Bác sĩ chỉ định bệnh nhân &amp; giao thiết bị</h3>
           <p>Bác sĩ chỉ định bệnh nhân tham gia chương trình thông qua nền tảng. BioSenses giao thiết bị tận nhà, hướng dẫn sử dụng và bắt đầu thu thập dữ liệu ngay trong ngày.</p>
+          <ul class="psp-list">
+            <li>Bác sĩ chỉ định bệnh nhân và chọn thiết bị theo dõi phù hợp</li>
+            <li>BioSenses giao thiết bị tận nhà bệnh nhân trong vòng 24h</li>
+            <li>Nhân viên hướng dẫn sử dụng thiết bị và ứng dụng mobile (15 phút)</li>
+            <li>Thu thập dữ liệu bắt đầu ngay sau khi bàn giao thiết bị</li>
+          </ul>
+        </div>
+        <div class="psp-visual">
+          <img src="assets/images/photoshoot-device-hand.png" alt="Giao thiết bị tận nhà bệnh nhân">
         </div>
       </div>
-      <div class="step-v fade-up">
-        <div class="step-v-left">
-          <div class="step-v-num">3</div>
-        </div>
-        <div class="step-v-content">
-          <h4>Theo dõi liên tục &amp; nhận báo cáo định kỳ</h4>
+
+      <div class="process-step-panel" id="tc-step-3">
+        <div class="psp-content">
+          <h3>Theo dõi liên tục &amp; nhận báo cáo định kỳ</h3>
           <p>Bác sĩ theo dõi dashboard bệnh nhân thời gian thực. Báo cáo định kỳ hoặc theo chỉ định được tạo tự động và thẩm định bởi chuyên gia, chia sẻ đến phòng khám và bệnh nhân qua ứng dụng.</p>
+          <ul class="psp-list">
+            <li>Bác sĩ theo dõi dashboard tất cả bệnh nhân trong thời gian thực</li>
+            <li>Cảnh báo tự động khi chỉ số vượt ngưỡng an toàn</li>
+            <li>Báo cáo định kỳ được tạo tự động và thẩm định bởi chuyên gia BioSenses</li>
+            <li>Bệnh nhân nhận kết quả và khuyến nghị qua ứng dụng mobile</li>
+          </ul>
+        </div>
+        <div class="psp-visual">
+          <img src="assets/images/portal-dashboard.jpg" alt="Dashboard theo dõi bệnh nhân thời gian thực">
         </div>
       </div>
     </div>
@@ -248,82 +307,93 @@
   <div class="container">
     <div class="cta-grid">
       <div class="cta-left">
-        <div class="section-label" style="color:var(--color-accent)">Triển khai ngay</div>
-        <h2>Đồng hành cùng cơ sở y tế trong triển khai tầm soát từ xa</h2>
-        <p>Liên hệ đội ngũ BioSenses để được tư vấn về chương trình BIO TELECARE™ phù hợp với đặc thù và quy mô của cơ sở y tế bạn.</p>
+        <div class="section-label" style="color:var(--color-accent)">Bắt đầu ngay hôm nay</div>
+        <h2>Đồng hành cùng cơ sở y tế<br>trong <span class="hl">triển khai Tele-Monitoring</span> từ xa</h2>
+        <p>Chúng tôi cung cấp giải pháp trọn gói — từ thiết bị, phần mềm đến hỗ trợ chuyên môn — giúp phòng khám và bệnh viện triển khai chương trình theo dõi sức khoẻ từ xa nhanh chóng, hiệu quả và không rủi ro tài chính.</p>
       </div>
-      <form class="cta-form" novalidate>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Họ tên <span style="color:#00BBA7">*</span></label>
-            <input type="text" placeholder="Nguyễn Văn A" required />
+      <div class="cta-form-wrapper">
+        <form class="cta-form" id="telecare-cta-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="tf-name">Họ tên <span style="color:var(--color-accent)">*</span></label>
+              <input type="text" id="tf-name" name="name" placeholder="Nguyễn Văn A" required />
+            </div>
+            <div class="form-group">
+              <label for="tf-org">Đơn vị công tác <span style="color:var(--color-accent)">*</span></label>
+              <input type="text" id="tf-org" name="org" placeholder="Bệnh viện / Phòng khám" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="tf-title">Chức danh / Chuyên khoa <span style="color:var(--color-accent)">*</span></label>
+              <input type="text" id="tf-title" name="title" placeholder="Giám đốc Y khoa" required />
+            </div>
+            <div class="form-group">
+              <label for="tf-phone">Số điện thoại <span style="color:var(--color-accent)">*</span></label>
+              <input type="tel" id="tf-phone" name="phone" placeholder="0901 234 567" required />
+            </div>
           </div>
           <div class="form-group">
-            <label>Đơn vị công tác <span style="color:#00BBA7">*</span></label>
-            <input type="text" placeholder="Bệnh viện / Phòng khám" required />
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Chức danh / Chuyên khoa <span style="color:#00BBA7">*</span></label>
-            <input type="text" placeholder="Giám đốc Y khoa" required />
+            <label for="tf-email">Email</label>
+            <input type="email" id="tf-email" name="email" placeholder="bac.si@benhvien.vn" />
           </div>
           <div class="form-group">
-            <label>Số điện thoại <span style="color:#00BBA7">*</span></label>
-            <input type="tel" placeholder="0901 234 567" required />
+            <label for="tf-solution">Giải pháp quan tâm <span style="color:var(--color-accent)">*</span></label>
+            <select id="tf-solution" name="solution" required>
+              <option value="">-- Chọn giải pháp --</option>
+              <option value="sleepcare">BIO SLEEPCARE™</option>
+              <option value="rhythm">BIO RHYTHM™</option>
+              <option value="cardicare">BIO CARDICARE™</option>
+              <option value="telecare" selected>BIO TELECARE™</option>
+              <option value="research">BIO RESEARCH™</option>
+            </select>
           </div>
-        </div>
-        <div class="form-group">
-          <label>Email</label>
-          <input type="email" placeholder="bac.si@benhvien.vn" />
-        </div>
-        <div class="form-group">
-          <label>Giải pháp quan tâm <span style="color:#00BBA7">*</span></label>
-          <select required>
-            <option value="">-- Chọn giải pháp --</option>
-            <option value="sleepcare">BIO SLEEPCARE™</option>
-            <option value="rhythm">BIO RHYTHM™</option>
-            <option value="cardicare">BIO CARDICARE™</option>
-            <option value="telecare" selected>BIO TELECARE™</option>
-            <option value="research">BIO RESEARCH™</option>
-          </select>
-        </div>
-        <button type="submit" class="btn btn-primary" style="width:100%;margin-top:8px;justify-content:center;padding:14px;">GỬI YÊU CẦU TƯ VẤN</button>
-        <p class="form-note">Cam kết bảo mật thông tin. BioSenses sẽ liên hệ trong 24h làm việc.</p>
-      </form>
+          <div class="form-group form-consent">
+            <label class="consent-label">
+              <input type="checkbox" id="tf-consent" name="consent" required />
+              <span>Tôi đồng ý cho BioSenses lưu trữ và sử dụng thông tin cá nhân để liên hệ tư vấn theo <a href="policy.html#policy-privacy" target="_blank" style="color:var(--color-accent)">Chính sách bảo mật</a></span>
+            </label>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;margin-top:8px;justify-content:center;padding:14px;">GỬI YÊU CẦU TƯ VẤN</button>
+          <p class="form-note">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Cam kết bảo mật thông tin. BioSenses sẽ liên hệ trong 24h làm việc.
+          </p>
+        </form>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- NEWS -->
+<!-- NEWS — 2 cards (same as homepage) -->
 <section class="section bg-white">
   <div class="container">
     <div class="news-header">
       <h2>Tin tức &amp; Sự kiện</h2>
       <a href="news.html" class="btn btn-outline btn-sm">Xem tất cả →</a>
     </div>
-    <div class="news-grid">
+    <div class="news-grid news-grid-2">
       <article class="news-card fade-up">
-        <div class="news-card-image">
-          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 6l10.5 6L22 6"/><path d="M1 6v12a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H3a2 2 0 0 0-2 2z"/></svg>
-        </div>
-        <div class="news-card-body">
-          <span class="news-tag">Triển khai</span>
-          <h3>BioSenses &amp; Bệnh viện Nhiệt Đới TP.HCM — Hành trình 2 năm nghiên cứu và triển khai Tele-Monitoring</h3>
-          <p>Câu chuyện về sự hợp tác nghiên cứu lâm sàng giữa BioSenses và Bệnh viện Bệnh Nhiệt Đới, từ dữ liệu nghiên cứu đến sản phẩm thương mại.</p>
-          <span class="news-date">01/05/2026</span>
-        </div>
+        <a href="https://www.oucru.org/vi/project/cac-nen-tang-giam-sat-tu-xa-gia-ca-phai-chang-va-co-kha-nang-mo-rong-de-xac-dinh-dac-diem-cua-benh-va-quan-ly-benh-nhan-trong-dai-dich-va-cac-benh-nhiem-trung-he-qua-cao/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit;display:contents;">
+          <div class="news-card-image"><img src="assets/images/pr-oucru-research.png" alt="OUCRU Research" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="news-card-body">
+            <span class="news-tag">Tin nổi bật</span>
+            <h3>OUCRU | Nền tảng giám sát từ xa và khả năng mở rộng để xác định đặc điểm của bệnh và quản lý bệnh nhân</h3>
+            <p>Dự án hợp tác giữa iParamed, Đơn vị nghiên cứu lâm sàng Đại học Oxford (OUCRU) và Bệnh viện Bệnh nhiệt đới trong Đại dịch Covid-19</p>
+            <span class="news-read-more">Đọc thêm →</span>
+          </div>
+        </a>
       </article>
       <article class="news-card fade-up">
-        <div class="news-card-image">
-          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-        </div>
-        <div class="news-card-body">
-          <span class="news-tag">Chính sách</span>
-          <h3>Bộ Y Tế ban hành hướng dẫn triển khai dịch vụ Tele-Monitoring tại cơ sở y tế năm 2026</h3>
-          <p>Quy định mới của Bộ Y Tế tạo điều kiện pháp lý rõ ràng cho việc mở rộng dịch vụ theo dõi sức khoẻ từ xa tại Việt Nam.</p>
-          <span class="news-date">15/04/2026</span>
-        </div>
+        <a href="https://www.vietnamplus.vn/ung-dung-cong-nghe-cap-nhat-tu-xa-chi-so-suc-khoe-benh-nhan-covid-19-post/37744.vnp" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit;display:contents;">
+          <div class="news-card-image"><img src="assets/images/pr-vnexpress.png" alt="Vietnam Plus" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="news-card-body">
+            <span class="news-tag">Tin nổi bật</span>
+            <h3>Vietnam Plus | Ứng dụng công nghệ cập nhật từ xa chỉ số sức khỏe bệnh nhân COVID-19</h3>
+            <p>Nếu tình trạng bệnh nhân diễn biến xấu, tín hiệu báo động sẽ được chuyển đến trung tâm ngay lập tức để bác sĩ kịp thời can thiệp.</p>
+            <span class="news-read-more">Đọc thêm →</span>
+          </div>
+        </a>
       </article>
     </div>
   </div>
@@ -358,7 +428,7 @@
       </div>
       <div class="footer-col">
         <h4>Giải pháp</h4>
-        <nav class="footer-links">
+        <nav class="footer-links" aria-label="Solutions">
           <a href="bio-sleepcare.html">BIO SLEEPCARE™</a>
           <a href="bio-rhythm.html">BIO RHYTHM™</a>
           <a href="#">BIO CARDICARE™</a>
@@ -368,7 +438,7 @@
       </div>
       <div class="footer-col">
         <h4>Công ty</h4>
-        <nav class="footer-links">
+        <nav class="footer-links" aria-label="Company">
           <a href="about.html">Về chúng tôi</a>
           <a href="news.html">Tin tức &amp; Sự kiện</a>
           <a href="advisory.html">Đội ngũ chuyên gia</a>
@@ -377,7 +447,7 @@
       </div>
       <div class="footer-col">
         <h4>Pháp lý</h4>
-        <nav class="footer-links">
+        <nav class="footer-links" aria-label="Legal">
           <a href="policy.html#policy-privacy">Chính sách bảo mật</a>
           <a href="policy.html#policy-return">Chính sách cung cấp, đổi huỷ &amp; hoàn phí</a>
           <a href="policy.html#policy-payment">Chính sách thanh toán &amp; Điều kiện giao dịch</a>
